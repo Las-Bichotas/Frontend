@@ -11,7 +11,8 @@
               La mejor forma de estudiar un idioma es practicandolo
             </p>
             <p class="text-subtitle-1">
-              Ten una conversacion con nuestros tutores nativos del tema que elijas
+              Ten una conversacion con nuestros tutores nativos del tema que
+              elijas
             </p>
             <v-card-actions>
               <v-btn large color="primary" elevation="3" class="mr-2">
