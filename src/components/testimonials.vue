@@ -1,61 +1,89 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col cols="6" sm="12" md="6">
-        <v-card elevation="2" outlined shaped>
-          <v-img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                 max-height="300"
-                 max-width="270"></v-img>
-          <v-card-title class="text-h3">John Doe</v-card-title>
-          <v-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ipsam quidem temporibus vitae?</v-card-text>
-          <v-card-actions>
-            <v-btn>Read More!</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-      <v-col cols="6" sm="12" md="6">
-        <v-card elevation="2" outlined shaped>
-          <v-img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                 max-height="300"
-                 max-width="270"></v-img>
-          <v-card-title class="text-h3">John Doe</v-card-title>
-          <v-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ipsam quidem temporibus vitae?</v-card-text>
-          <v-card-actions>
-            <v-btn>Read More!</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-      <v-col cols="6" sm="12" md="6">
-        <v-card elevation="2" outlined shaped>
-          <v-img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                 max-height="300"
-                 max-width="270"></v-img>
-          <v-card-title class="text-h3">John Doe</v-card-title>
-          <v-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ipsam quidem temporibus vitae?</v-card-text>
-          <v-card-actions>
-            <v-btn>Read More!</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-      <v-col cols="6" sm="12" md="6">
-        <v-card elevation="2" outlined shaped>
-          <v-img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                 max-height="300"
-                 max-width="270"></v-img>
-          <v-card-title class="text-h3">John Doe</v-card-title>
-          <v-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit ipsam quidem temporibus vitae?</v-card-text>
-          <v-card-actions>
-            <v-btn>Read More!</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+    <v-container>
+        <v-row>
+          <v-col cols="6">
+            <v-card dark  max-width="700">
+              <v-row>
+                <v-col cols="6" >
+                  <v-img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John"></v-img>
+                </v-col>
+                <v-col cols="6" >
+                  <v-card-title class="align-center">The title</v-card-title>
+                  <v-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dolorem fugiat
+                    labore necessitatibus saepe!</v-card-text>
+                </v-col>
+              </v-row>
+            </v-card>
+          </v-col>
+          <v-col cols="6" >
+            <v-card dark  max-width="700">
+              <v-row>
+                <v-col cols="6" >
+                  <v-img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John"></v-img>
+                </v-col>
+                <v-col cols="6" >
+                  <v-card-title class="align-center">The title</v-card-title>
+                  <v-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dolorem fugiat
+                    labore necessitatibus saepe!</v-card-text>
+                </v-col>
+              </v-row>
+            </v-card>
+          </v-col>
+        </v-row>
+      <v-spacer></v-spacer>
+      <v-row>
+        <v-col cols="6">
+          <v-card dark  max-width="700">
+            <v-row>
+              <v-col cols="6" >
+                <v-img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John"></v-img>
+              </v-col>
+              <v-col cols="6" >
+                <v-card-title class="align-center">The title</v-card-title>
+                <v-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dolorem fugiat
+                  labore necessitatibus saepe!</v-card-text>
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-col>
+        <v-col cols="6" >
+          <v-card dark  max-width="700">
+            <v-row>
+              <v-col cols="6" >
+                <v-img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John"></v-img>
+              </v-col>
+              <v-col cols="6" >
+                <v-card-title class="align-center">The title</v-card-title>
+                <v-card-text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dolorem fugiat
+                  labore necessitatibus saepe!</v-card-text>
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-col>
+      </v-row>
+
+    </v-container>
 </template>
 
 <script>
 export default {
-  name: "testimonials"
+  name: "testimonials",
+  data: () => ({
+    items: [
+      {
+        color: '#1F7087',
+        src: 'https://cdn.vuetifyjs.com/images/cards/foster.jpg',
+        title: 'Supermodel',
+        artist: 'Foster the People',
+      },
+      {
+        color: '#952175',
+        src: 'https://cdn.vuetifyjs.com/images/cards/halcyon.png',
+        title: 'Halcyon Days',
+        artist: 'Ellie Goulding',
+      },
+    ],
+  }),
 }
 </script>
 
