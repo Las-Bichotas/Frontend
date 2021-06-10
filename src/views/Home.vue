@@ -1,16 +1,26 @@
 <template>
-
   <div class="home">
-
     <navbar></navbar>
     <banner></banner>
-    <more-spoken></more-spoken>
+    <v-row>
+      <v-col cols="6">
+        <more-spoken></more-spoken>
+      </v-col>
+      <v-col cols="6">
+        <more-spoken></more-spoken>
+      </v-col>
+    </v-row>
+    <testimonials></testimonials>
+    <v-row>
+      <v-col cols="6">
+        <ranking-student></ranking-student>
+      </v-col>
+      <v-col cols="6"></v-col>
+    </v-row>
     <testimonials></testimonials>
     <call-to-login></call-to-login>
-    <ranking-student></ranking-student>
     <Footer> </Footer>
   </div>
-
 </template>
 
 <script>
@@ -24,7 +34,7 @@ import RankingStudent from "@/components/RankingStudent";
 import Testimonials from "../components/testimonials";
 import MoreSpoken from "../components/more-spoken";
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     MoreSpoken,
     Testimonials,
@@ -32,7 +42,7 @@ export default {
     Navbar,
     CallToLogin,
     Banner,
-    Footer
-  }
-}
+    Footer,
+  },
+};
 </script>
