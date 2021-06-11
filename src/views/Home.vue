@@ -17,7 +17,6 @@
       </v-col>
       <v-col cols="6"></v-col>
     </v-row>
-    <testimonials></testimonials>
     <call-to-login></call-to-login>
     <Footer> </Footer>
   </div>
