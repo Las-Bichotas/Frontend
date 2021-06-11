@@ -1,15 +1,15 @@
 <template>
   <v-card
       class="mx-auto overflow-hidden"
-      height="400"
+
   >
     <v-app-bar
-        color="deep-purple"
+        color="primary"
         dark
         elevate-on-scroll
         scroll-target="#scrolling-techniques-7"
     >
-      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+
 
       <v-toolbar-title>ILanguage</v-toolbar-title>
       <v-spacer></v-spacer>
@@ -49,7 +49,7 @@
     <v-sheet
         id="scrolling-techniques-7"
         class="overflow-y-auto"
-        max-height="600"
+
     >
 
     </v-sheet>
