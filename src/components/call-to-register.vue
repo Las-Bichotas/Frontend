@@ -28,9 +28,11 @@
               Unete a nuestro staff de tutores y comparte tus conocimientos en
               tu idioma
             </p>
+            <router-link :to="{name: 'Login'}">
+            <v-btn block large color="primary" elevation="6" class="mb-5" >Login</v-btn></router-link>
 
-            <v-btn block large color="primary" elevation="6" class="mb-5">Login</v-btn>
-            <v-btn block large elevation="6" outlined> Register</v-btn>
+            <router-link :to="{name: 'Register'}">
+              <v-btn block large elevation="6" outlined> Register</v-btn></router-link>
           </div>
         </v-col>
       </v-row>
