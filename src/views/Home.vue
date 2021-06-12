@@ -14,10 +14,14 @@
 
     <testimonials></testimonials>
     <v-row>
-      <v-col cols="6">
+      <v-col cols="4">
         <ranking-student></ranking-student>
       </v-col>
-      <v-col cols="6"></v-col>
+      <v-col cols="8">
+    <v-container fluid>
+      <studentfeedback></studentfeedback>
+    </v-container>
+      </v-col>
     </v-row>
     <call-to-login></call-to-login>
     <Footer> </Footer>
@@ -34,6 +38,7 @@ import Navbar from "@/components/Navbar";
 import RankingStudent from "@/components/RankingStudent";
 import Testimonials from "../components/testimonials";
 import MoreSpoken from "../components/more-spoken";
+import Studentfeedback from '../components/studentfeedback.vue';
 export default {
   name: "Home",
   components: {
@@ -44,6 +49,7 @@ export default {
     CallToLogin,
     Banner,
     Footer,
+    Studentfeedback,
   },
 };
 </script>

@@ -12,21 +12,16 @@
       <badge-component></badge-component>
     </v-container>
     <br>
-    <v-container fluid>
-      <studentfeedback></studentfeedback>
-    </v-container>
 
   </v-app>
 </template>
 
 <script>
 import BadgeComponent from "@/components/badge-component";
-import Studentfeedback from "@/components/studentfeedback";
 export default {
   name: 'App',
 
   components: {
-    Studentfeedback,
     BadgeComponent,
   },
 
