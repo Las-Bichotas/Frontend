@@ -8,10 +8,33 @@
       </div>
       <router-view />
     </div>
+    <v-container fluid>
+      <badge-component></badge-component>
+    </v-container>
+    <br>
+    <v-container fluid>
+      <studentfeedback></studentfeedback>
+    </v-container>
 
   </v-app>
 </template>
 
+<script>
+import BadgeComponent from "@/components/badge-component";
+import Studentfeedback from "@/components/studentfeedback";
+export default {
+  name: 'App',
+
+  components: {
+    Studentfeedback,
+    BadgeComponent,
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
