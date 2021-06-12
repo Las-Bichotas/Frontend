@@ -2,14 +2,16 @@
   <div class="home">
     <navbar></navbar>
     <banner></banner>
-    <v-row>
+    <!--v-row>
       <v-col cols="6">
         <more-spoken></more-spoken>
       </v-col>
       <v-col cols="6">
         <more-spoken></more-spoken>
       </v-col>
-    </v-row>
+    </v-row-->
+    <more-spoken></more-spoken>
+
     <testimonials></testimonials>
     <v-row>
       <v-col cols="6">
