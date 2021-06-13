@@ -12,7 +12,6 @@
     </v-row-->
     <more-spoken></more-spoken>
 
-    <testimonials></testimonials>
     <v-row>
       <v-col cols="4">
         <ranking-student></ranking-student>
@@ -23,6 +22,7 @@
     </v-container>
       </v-col>
     </v-row>
+    <testimonials></testimonials>
     <call-to-login></call-to-login>
     <Footer> </Footer>
   </div>
