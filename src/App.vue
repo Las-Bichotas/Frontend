@@ -8,10 +8,28 @@
       </div>
       <router-view />
     </div>
+    <v-container fluid>
+      <badge-component></badge-component>
+    </v-container>
+    <br>
 
   </v-app>
 </template>
 
+<script>
+import BadgeComponent from "@/components/badge-component";
+export default {
+  name: 'App',
+
+  components: {
+    BadgeComponent,
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
