@@ -6,58 +6,66 @@
       calificados por los demas usuarios con un sistema sencillo y el usuario
       que es calificado podra ver las calificaciones que le dan en porcentajes.
     </p>
+
     <v-container>
+
       <v-row>
         <v-col cols="6">
-          <v-img height="150px" src="../assets/student1.png"></v-img>
+          <v-img height="250px" src="../assets/student1.png"></v-img>
           <h2 class="text-center">Juan carlos</h2>
         </v-col>
         <v-col cols="6">
           <v-row class="d-flex justify-center" >
             <div >
-              <v-rating color="warning" half-increments hover length="5" size="38" value="3"></v-rating>
+              <v-rating color="warning" half-increments hover length="5" size="38" value="4"></v-rating>
             </div>
           </v-row>
+
           <v-row>
             <v-col>
-              1 Estrella
+              1 Estrellas
               <v-progress-circular
                   value="15"
                   color="purple lighten-3"
-                  height="15"
-              ></v-progress-circular>
+                  :size="50"
+                  :width="10"
+              >{{10}}</v-progress-circular>
             </v-col>
             <v-col>
               2 Estrellas
               <v-progress-circular
-                  value="21"
+                  value="25"
                   color="blue lighten-3"
-                  height="15"
-              ></v-progress-circular>
+                  :size="50"
+                  :width="10"
+              >{{25}}</v-progress-circular>
             </v-col>
             <v-col>
               3 Estrellas
               <v-progress-circular
-                  value="40"
-                  color="grey lighten-1"
-                  height="15"
-              ></v-progress-circular>
+                  value="45"
+                  color="green lighten-1"
+                  :size="50"
+                  :width="10"
+              >{{45}}</v-progress-circular>
             </v-col>
             <v-col>
               4 Estrellas
               <v-progress-circular
                   value="55"
                   color="blue-grey darken-1"
-                  height="15"
-              ></v-progress-circular>
+                  :size="50"
+                  :width="10"
+              >{{55}}</v-progress-circular>
             </v-col>
             <v-col>
               5 Estrellas
               <v-progress-circular
                   value="75"
                   color="amber"
-                  height="15"
-              ></v-progress-circular>
+                  :size="50"
+                  :width="10"
+              >{{75}}</v-progress-circular>
             </v-col>
           </v-row>
         </v-col>
@@ -75,8 +83,6 @@ export default {
   }),
 }
 </script>
-
-
 <style scoped>
 
 </style>
