@@ -1,21 +1,26 @@
 <template>
-  <v-container>
+  <v-container elevation="4">
   <v-card
       max-width="400"
       class="mx-auto"
   >
     <v-container>
       <v-row >
+        <v-card-title class="text-h5" >Ranking de Estudiantes</v-card-title>
+        <v-card-text class="grey--text mb-2">Top de los estudiantes reservaron mas clases con usted .</v-card-text>
         <v-col
             v-for="(item, i) in items"
             :key="i"
             cols="12"
+
         >
+
+
           <v-card
               :color="item.color"
-               dark
+
           >
-            <div class="d-flex flex-no-wrap justify-space-between">
+            <div class="d-flex align-center justify-center" lg="6">
               <div>
                 <v-card-actions
                     :color="item.color"
@@ -33,8 +38,11 @@
                     :size="50"
                     :width="10"
                 >
-                  {{ 75 }}
+                  {{ 75  }}
                 </v-progress-circular>
+                <v-card-subtitle class="text-subtitle-1" v-if="item.artist ==='Jaina Gouding'">
+                    Veces
+                  </v-card-subtitle>
 
 
                 <v-progress-circular
@@ -47,7 +55,9 @@
 
                 > {{ 65 }}
 
-                </v-progress-circular>
+                </v-progress-circular>    <v-card-subtitle class="text-subtitle-1" v-if="item.artist ==='Ellie Gouding'">
+                Veces
+              </v-card-subtitle>
 
                 <v-progress-circular
                     v-if="item.artist === 'Ana Maria'"
@@ -60,7 +70,9 @@
 
                 > {{ 35 }}
 
-                </v-progress-circular>
+                </v-progress-circular> <v-card-subtitle class="text-subtitle-1" v-if="item.artist ==='Ana Maria'">
+                Veces
+              </v-card-subtitle>
                 <v-card-actions>
                   <v-btn
                       v-if="item.artist === 'nadie'"
@@ -102,6 +114,7 @@ export default {
 
 
     items: [
+
       {
         color: '#E5D108 ',
         src: 'https://cdn.vuetifyjs.com/images/john.jpg',
