@@ -1,65 +1,75 @@
 <template>
   <div>
-    <h1 class="text-h2 text-lg-h1 text-md-h2 text-sm-h2 mb-5 text-center">Insignias</h1>
+    <h1 class="text-h2 text-lg-h1 text-md-h2 text-sm-h2 mb-5 text-center">Badges</h1>
     <p class="text-lg-h7 text-center">
-      Estas son algunas de las insignias que se puede conseguir en nuestra aplicación. Estas diferentes insignias son
-      para los estudiantes y profesores con las cuales pueden mostrarlas a los demás usuarios que visitan sus perfiles.
+      These are some of the badges that can be obtained in our app. These different badges for students and
+      for teachers which can show them to other users who visit their profile.
     </p>
-    <v-container>
+    <div>
       <v-row>
-        <v-card elevation="2" class="mx-auto my-12" hover max-width="500">
-          <v-col>
-            <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
-              <v-carousel-item
-                  v-for="(item,i) in items"
-                  :key="i"
-                  :src="item.src"
-              ></v-carousel-item>
-            </v-carousel>
-          </v-col>
-        </v-card>
-        <h2>Insignias Profesores</h2>
-        <v-card elevation="2" class="mx-auto my-12" hover max-width="500">
-          <v-col>
-            <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
-              <v-carousel-item
-                  v-for="(item,i) in imgs"
-                  :key="i"
-                  :src="item.src"
-              ></v-carousel-item>
-            </v-carousel>
-          </v-col>
-        </v-card>
+        <v-col>
+          <v-container>
+            <h2 class="text-subtitle-1 text-decoration-underline text-center">Badges for teachers</h2>
+            <v-row>
+              <v-col>
+                <v-card elevation="2" class="mx-auto my-12" hover max-width="500">
+                  <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
+                    <v-carousel-item
+                        v-for="(item,i) in items"
+                        :key="i"
+                        :src="item.src"
+                    ></v-carousel-item>
+                  </v-carousel>
+                </v-card>
+              </v-col>
+              <v-col>
+                <v-card elevation="2" class="mx-auto my-12" hover max-width="500">
+                  <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
+                    <v-carousel-item
+                        v-for="(item,i) in imgs"
+                        :key="i"
+                        :src="item.src"
+                    ></v-carousel-item>
+                  </v-carousel>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-col>
+        <v-col>
+          <v-container>
+            <h2 class="text-subtitle-1 text-decoration-underline text-center">Badges for Students</h2>
+            <v-row>
+              <v-col>
+                <v-card elevation="2" class="mx-auto my-12" hover max-width="500">
+                  <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
+                    <v-carousel-item
+                        v-for="(item,i) in cards"
+                        :key="i"
+                        :src="item.src"
+                    ></v-carousel-item>
+                  </v-carousel>
+                </v-card>
+              </v-col>
+              <v-col>
+                <v-card elevation="2" class="mx-auto my-12" hover max-width="500">
+                  <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
+                    <v-carousel-item
+                        v-for="(item,i) in imgss"
+                        :key="i"
+                        :src="item.src"
+                    ></v-carousel-item>
+                  </v-carousel>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-col>
       </v-row>
-      <v-row>
-        <v-card elevation="2" class="mx-auto my-12" hover max-width="500">
-          <v-col>
-            <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
-              <v-carousel-item
-                  v-for="(item,i) in cards"
-                  :key="i"
-                  :src="item.src"
-              ></v-carousel-item>
-            </v-carousel>
-          </v-col>
-        </v-card>
-
-        <h2>Insignias Alumnos</h2>
-        <v-card elevation="2" class="mx-auto my-12" hover max-width="500">
-          <v-col>
-            <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
-              <v-carousel-item
-                  v-for="(item,i) in imgss"
-                  :key="i"
-                  :src="item.src"
-              ></v-carousel-item>
-            </v-carousel>
-          </v-col>
-        </v-card>
-      </v-row>
-    </v-container>
+    </div>
   </div>
 </template>
+
 
 <script>
 export default {
