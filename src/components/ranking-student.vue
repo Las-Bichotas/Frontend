@@ -2,7 +2,7 @@
   <v-container elevation="5">
   <v-card
       class="mx-auto"
-      max-width="344"
+      max-width="335"
       outlined
   >
     <v-container>
@@ -33,68 +33,70 @@
                   </v-card-title>
 
 
-                  <v-card class="mx-auto " >
-                    <v-avatar
 
-                        size="80"
+                  <v-avatar
 
-                        class="avatar justify-center"
-                    >
-                      <v-img  :src="item.src"  ></v-img>
-                    </v-avatar>
-                  </v-card>
+                      size="80"
+
+                      class="avatar justify-center"
+                  >
+                    <v-img  :src="item.src"  ></v-img>
+                  </v-avatar>
 
 
                 </v-card-actions>
 
 
 
+                  <v-card-text class="text-lg-h7 text-center font-italic" v-text="item.artist">
+                </v-card-text>
 
-                <v-card-text class="text-lg-h7 text-center font-italic" v-text="item.artist">
-                   </v-card-text>
+
 
 
 
                 <v-row>
-                  <v-col   v-if="item.artist === 'Jaina Gouding'">
-                   70 veces
+                  <v-col class="text-lg-h7 text-center font-italic"   v-if="item.artist === 'Jaina Gouding'" >
                     <v-progress-circular
                         v-if="item.artist === 'Jaina Gouding'"
                         value="70"
                         color="purple lighten-3"
                         :size="35"
                         :width="6"
-                    ></v-progress-circular>
+                    >{{70}}</v-progress-circular>
+
+                    Reservas
                   </v-col>
                 </v-row>
 
-
                 <v-row>
-                  <v-col   v-if="item.artist === 'Ellie Gouding'">
-                    50 veces
+                  <v-col class="text-lg-h7 text-center font-italic"   v-if="item.artist === 'Ellie Gouding'" >
                     <v-progress-circular
                         v-if="item.artist === 'Ellie Gouding'"
                         value="50"
-                        color="indigo "
+                        color="blue lighten-3"
                         :size="35"
                         :width="6"
-                    ></v-progress-circular>
+                    >{{50}}</v-progress-circular>
+
+                    Reservas
                   </v-col>
                 </v-row>
+
 
                 <v-row>
-                  <v-col   v-if="item.artist === 'Ana Maria'">
-                    20 veces
+                  <v-col class="text-lg-h7 text-center font-italic"   v-if="item.artist ==='Ana Maria'">
                     <v-progress-circular
                         v-if="item.artist === 'Ana Maria'"
-                        value="20"
-                        color="blue-grey darken-1"
+                        value="35"
+                         color="amber"
                         :size="35"
                         :width="6"
-                    ></v-progress-circular>
+                    >{{35}}</v-progress-circular>
+
+                    Reservas
                   </v-col>
                 </v-row>
-
 
               </div>
 
