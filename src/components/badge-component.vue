@@ -8,7 +8,7 @@
       <v-row>
         <v-card :loading="loading" class="mx-auto my-12" max-width="500">
           <v-col>
-            <v-carousel :show-arrows="false" :cycle="true">
+            <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
               <v-carousel-item
                   v-for="(item,i) in items"
                   :key="i"
@@ -20,7 +20,7 @@
         <h2>Insignias Profesores</h2>
         <v-card :loading="loading" class="mx-auto my-12" max-width="500">
           <v-col>
-            <v-carousel :show-arrows="false" :cycle="true">
+            <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
               <v-carousel-item
                   v-for="(item,i) in imgs"
                   :key="i"
@@ -33,7 +33,7 @@
 
         <v-card :loading="loading" class="mx-auto my-12" max-width="500">
           <v-col>
-            <v-carousel :show-arrows="false" :cycle="true">
+            <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
               <v-carousel-item
                   v-for="(item,i) in cards"
                   :key="i"
@@ -46,7 +46,7 @@
         <h2>Insignias Alumnos</h2>
         <v-card :loading="loading" class="mx-auto my-12" max-width="500">
           <v-col>
-            <v-carousel :show-arrows="false" :cycle="true">
+            <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
               <v-carousel-item
                   v-for="(item,i) in imgss"
                   :key="i"

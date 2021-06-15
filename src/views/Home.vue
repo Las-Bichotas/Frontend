@@ -23,7 +23,10 @@
       </v-col>
     </v-row>
     <testimonials></testimonials>
+    <badge-component></badge-component>
+
     <call-to-login></call-to-login>
+
     <Footer> </Footer>
   </div>
 </template>
@@ -38,9 +41,11 @@ import RankingStudent from "@/components/RankingStudent";
 import Testimonials from "../components/testimonials";
 import MoreSpoken from "../components/more-spoken";
 import Studentfeedback from '../components/studentfeedback.vue';
+import BadgeComponent from "../components/badge-component";
 export default {
   name: "Home",
   components: {
+    BadgeComponent,
     MoreSpoken,
     Testimonials,
     RankingStudent,

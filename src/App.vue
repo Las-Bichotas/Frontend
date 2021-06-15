@@ -7,23 +7,19 @@
       </div>
       <router-view />
     </div>
-    <v-container fluid>
-      <badge-component></badge-component>
-    </v-container>
+
     <br>
 
   </v-app>
 </template>
 
 <script>
-import BadgeComponent from "@/components/badge-component";
 import Navbar from "@/components/Navbar";
 export default {
   name: 'App',
 
   components: {
     Navbar,
-    BadgeComponent,
   },
 
   data: () => ({
