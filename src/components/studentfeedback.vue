@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="xs10">FeedBack</h1>
+    <h1 class="xs10 text-center">FeedBack</h1>
     <p class="text-lg-h7 text-center">
       One benefit that teachers will have will be that they can be graded by other users with a simple and easy-to-use
       system.
