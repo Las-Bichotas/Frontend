@@ -33,10 +33,11 @@
                   </v-card-title>
 
 
-                  <v-card class="mx-auto y ma-3" >
+                  <v-card class="mx-auto " >
                     <v-avatar
 
                         size="80"
+
                         class="avatar justify-center"
                     >
                       <v-img  :src="item.src"  ></v-img>
@@ -61,7 +62,8 @@
                         v-if="item.artist === 'Jaina Gouding'"
                         value="70"
                         color="purple lighten-3"
-                        height="15"
+                        :size="35"
+                        :width="6"
                     ></v-progress-circular>
                   </v-col>
                 </v-row>
@@ -74,7 +76,8 @@
                         v-if="item.artist === 'Ellie Gouding'"
                         value="50"
                         color="indigo "
-                        height="15"
+                        :size="35"
+                        :width="6"
                     ></v-progress-circular>
                   </v-col>
                 </v-row>
@@ -85,8 +88,9 @@
                     <v-progress-circular
                         v-if="item.artist === 'Ana Maria'"
                         value="20"
-                        color="red lighten  "
-                        height="15"
+                        color="blue-grey darken-1"
+                        :size="35"
+                        :width="6"
                     ></v-progress-circular>
                   </v-col>
                 </v-row>
