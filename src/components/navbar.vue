@@ -1,55 +1,28 @@
 
 <template>
   <div id = "app">
-
-
-
     <v-app-bar
         color="primary"
-        dark
+
         elevate-on-scroll
         scroll-target="#scrolling-techniques-7"
     >
 
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon       @click="drawer = !drawer" ></v-app-bar-nav-icon>
       <router-link :to="{name: 'Home'}">
       <v-toolbar-title class="homeBtn">ILanguage</v-toolbar-title></router-link>
       <v-spacer></v-spacer>
 
 
           <v-toolbar-items class="hidden-sm-and-down" >
-            <router-link :to="{name: 'Register'}">
-          <v-btn
 
-              color="red"
-              dark
-          >
-            Register
-            <v-icon
-                dark
-                right
-            >
-              mdi-robot
-            </v-icon>
-          </v-btn>
-            </router-link>
+              <router-link :to="{name: 'Register'}">
+                <v-btn large color="primary" > Register</v-btn> </router-link>
 
             <router-link :to="{name: 'Login'}">
-          <v-btn
-
-              color="success"
-              dark
-
-          >
-            Log in
-            <v-icon
-                dark
-                right
-            >
-              mdi-robot-happy
-            </v-icon>
-          </v-btn>
-            </router-link>
+              <v-btn large color="primary"  flat >
+                Login</v-btn
+              > </router-link>
           </v-toolbar-items>
 
 
@@ -78,7 +51,7 @@
       >
         <v-list-item-group
             v-model="group"
-            active-class="deep-purple--text text--accent-4"
+            active-class="blue--text text--accent-4"
         >
           <v-list-item>
             <v-list-item-icon>

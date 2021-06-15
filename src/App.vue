@@ -3,7 +3,7 @@
 
     <div id="app">
       <div id="nav">
-       <navbar class="navbar"></navbar>
+       <navbar ></navbar>
       </div>
       <router-view />
     </div>
@@ -41,15 +41,13 @@ export default {
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+ /*   color: #2c3e50;*/
 
-    &.router-link-exact-active {
+   /* &.router-link-exact-active {
       color: #42b983;
-    }
+    }*/
   }
 }
 
-.nvbar{
 
-}
 </style>

@@ -7,8 +7,8 @@
   >
     <v-container>
       <v-row >
-        <v-card-title class="text-h5" >Ranking de Estudiantes</v-card-title>
-        <v-card-text class="grey--text mb-2">Top de los estudiantes reservaron mas clases con usted .</v-card-text>
+        <v-card-title class="text-h5" >Student Ranking</v-card-title>
+        <v-card-text class="grey--text mb-2">Top students booked more classes with you .</v-card-text>
         <v-col
             v-for="(item, i) in items"
             :key="i"
@@ -65,7 +65,7 @@
                         :width="6"
                     >{{70}}</v-progress-circular>
 
-                    Reservas
+                    Reservations
                   </v-col>
                 </v-row>
 
@@ -79,7 +79,7 @@
                         :width="6"
                     >{{50}}</v-progress-circular>
 
-                    Reservas
+                    Reservations
                   </v-col>
                 </v-row>
 
@@ -94,7 +94,7 @@
                         :width="6"
                     >{{35}}</v-progress-circular>
 
-                    Reservas
+                    Reservations
                   </v-col>
                 </v-row>
 
@@ -121,7 +121,7 @@ export default {
       {
         color: '#E5D108 ',
         src: 'https://cdn.vuetifyjs.com/images/john.jpg',
-        title: 'Primer Puesto   ',
+        title: 'First place   ',
         artist: 'Jaina Gouding',
 
 
@@ -131,14 +131,14 @@ export default {
       {
         color: 'blue-grey lighten-4  ',
         src: 'https://avatars0.githubusercontent.com/u/9064066?v=4&s=460',
-        title: 'Segundo Puesto',
+        title: 'Second Place',
         artist: 'Ellie Gouding',
 
       },
       {
         color: '#D68910 ',
         src: 'https://cdn.vuetifyjs.com/images/profiles/marcus.jpg',
-        title: 'Tercer Puesto',
+        title: 'Third Place',
         artist: 'Ana Maria',
 
       },
