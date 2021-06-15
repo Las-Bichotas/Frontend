@@ -8,11 +8,10 @@
               ILanguage
             </h1>
             <p class="text-h6">
-              La mejor forma de estudiar un idioma es practicandolo
+              The best way to study a language is to practice it.
             </p>
             <p class="text-subtitle-1">
-              Ten una conversacion con nuestros tutores nativos del tema que
-              elijas
+              Have a conversation with our native tutors on the topic of your choice.
             </p>
             <v-card-actions>
               <router-link :to="{name: 'Login'}">

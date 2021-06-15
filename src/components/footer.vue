@@ -28,18 +28,19 @@
                   v-on="on"
                   class="btn-terminos"
               >
-                Terminos y condiciones
+                Terms and Conditions
               </v-btn>
             </template>
             <v-card>
               <v-card-title>
-                <span class="text-h5">Terminos y condiciones</span>
+                <span class="text-h5">Terms and Conditions</span>
               </v-card-title>
               <v-card-text class="text-md-center text-justify">
-                Al acceder y utilizar este servicio, usted acepta y accede a estar obligado por los términos y disposiciones de este acuerdo. Asimismo, al utilizar estos servicios particulares, usted estará sujeto a toda regla o guía de uso correspondiente que se haya publicado para dichos servicios. Toda participación en este servicio constituirá la aceptación de este acuerdo. Si no acepta cumplir con lo anterior, por favor, no lo utilice.
-                <strong class="strong-text"><br>Politica de privacidad <br></strong>  Ilanguage  te informa sobre su Política de Privacidad respecto del tratamiento y protección de los datos de carácter personal de los usuarios y clientes que puedan ser recabados por la navegación o contratación de servicios a través del sitio Web www.ilanguage.com
-                En este sentido, el Titular garantiza el cumplimiento de la normativa vigente en materia de protección de datos personales, reflejada en la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y de Garantía de Derechos Digitales (LOPD GDD). Cumple también con el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016 relativo a la protección de las personas físicas (RGPD).
-                El uso de sitio Web implica la aceptación de esta Política de Privacidad así como las condiciones incluidas en el Aviso Legal. <strong> <br> Obtención de datos personales <br> </strong> Para navegar por www.ilanguage.com no es necesario que facilites ningún dato personal. Los casos en los que sí proporcionas tus datos personales son los siguientes:
+                By accessing and using this service, you accept and agree to be bound by the terms and provisions of this agreement. In addition, by using these particular services, you shall be subject to any applicable rules or usage guidelines posted for such services. Any participation in this service shall constitute acceptance of this agreement. If you do not agree to comply with the foregoing, please do not use it.
+                 <strong class="strong-text"><br>Privacy Policy  <br></strong>  Ilanguage informs you about its Privacy Policy regarding the processing and protection of personal data of users and customers that may be collected by browsing or contracting services through the website www.ilanguage.com.
+                In this regard, the Holder guarantees compliance with current regulations on the protection of personal data, reflected in the Organic Law 3/2018, of December 5, on the Protection of Personal Data and Guarantee of Digital Rights (LOPD GDD). It also complies with Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of natural persons (GDPR).
+                The use of website implies acceptance of this Privacy Policy as well as the conditions included in the Legal Notice.
+                <strong> <br> Collection of personal data <br> </strong> To browse www.ilanguage.com you do not need to provide any personal data. The cases in which you do provide your personal data are the following:
                 <ul id="example-2">
                   <li v-for="(datoPersonal) in datosPersonales" v-bind:key="datoPersonal.id">
                      {{ datoPersonal.content }}
@@ -51,18 +52,18 @@
                     {{ derecho.content }}
                   </li>
                 </ul>
-                El ejercicio de estos derechos es personal y por tanto debe ser ejercido directamente por el interesado, solicitándolo directamente al Titular, lo que significa que cualquier cliente, suscriptor o colaborador que haya facilitado sus datos en algún momento puede dirigirse al Titular y pedir información sobre los datos que tiene almacenados y cómo los ha obtenido, solicitar la rectificación de los mismos, solicitar la portabilidad de sus datos personales, oponerse al tratamiento, limitar su uso o solicitar la cancelación de esos datos en los ficheros del Titular. \n
-                Para ejercitar tus derechos de acceso, rectificación, cancelación, portabilidad y oposición tienes que enviar un correo electrónico a info@ilanguage.com junto con la prueba válida en derecho como una fotocopia del D.N.I. o equivalente.
-                Tienes derecho a la tutela judicial efectiva y a presentar una reclamación ante la autoridad de control, en este caso, la Agencia Española de Protección de Datos, si consideras que el tratamiento de datos personales que te conciernen infringe el Reglamento.
-                Las páginas de este sitio Web pueden incluir contenido incrustado (por ejemplo, vídeos, imágenes, artículos, etc.). El contenido incrustado de otras web se comporta exactamente de la misma manera que si hubieras visitado la otra web.
-                Estos sitios Web pueden recopilar datos sobre ti, utilizar cookies, incrustar un código de seguimiento adicional de terceros, y supervisar tu interacción usando este código.
-                <strong> <br> Contenido de otros sitios web  <br> </strong> Las páginas de este sitio Web pueden incluir contenido incrustado (por ejemplo, vídeos, imágenes, artículos, etc.). El contenido incrustado de otras web se comporta exactamente de la misma manera que si hubieras visitado la otra web.
-                Estos sitios Web pueden recopilar datos sobre ti, utilizar cookies, incrustar un código de seguimiento adicional de terceros, y supervisar tu interacción usando este código.
-                <strong> <br> Política de cookies <br> </strong> Para que este sitio Web funcione correctamente necesita utilizar cookies, que es una información que se almacena en tu navegador web.
-                En la página Política de Cookies puedes consultar toda la información relativa a la política de recogida, la finalidad y el tratamiento de las cookies.
-                Esta página y sus componentes se ofrecen únicamente con fines informativos; esta página no se hace responsable de la exactitud, utilidad o disponibilidad de cualquier información que se transmita o ponga a disposición a través de la misma; no será responsable por cualquier error u omisión en dicha información”.Este tipo de disposición te ayudará a evitar responsabilidad en caso de que un usuario se base en tu información y eso cause un problema.
-                La página y su contenido original, las características y la funcionalidad son propiedad de ILanguage S.A.C y están protegidos por derechos de autor internacionales, marcas registradas, patentes, secretos comerciales y demás leyes de propiedad intelectual o de derechos de propiedad.
-                La empresa se reserva el derecho de modificar estas condiciones de vez en cuando según lo considere oportuno; asimismo, el uso permanente de la página significará su aceptación de cualquier ajuste a tales términos. Si hay algún cambio en nuestra política de privacidad, anunciaremos en nuestra página principal y en otras páginas importantes de nuestro sitio que se han hecho tales cambios. Si hay algún cambio en nuestra página respecto a la manera en que usamos la información de identificación personal de nuestros clientes, enviaremos una notificación por correo electrónico o correo postal a aquellos que sean afectados por el cambio. Todo cambio en nuestra política de privacidad se publicará en nuestra página 30 días antes de que tales cambios ocurran. Por lo tanto, se le recomienda volver a leer esta declaración de manera regular
+                The exercise of these rights is personal and therefore must be exercised directly by the interested party, requesting it directly to the Holder, which means that any customer, subscriber or collaborator who has provided their data at any time may contact the Holder and request information about the data stored and how it has been obtained, request the rectification of the same, request the portability of their personal data, oppose the treatment, limit its use or request the cancellation of such data in the files of the Holder. \n
+                To exercise your rights of access, rectification, cancellation, portability and opposition you have to send an email to info@ilanguage.com along with valid proof in law such as a photocopy of your ID card or equivalent.
+                You have the right to effective judicial protection and to file a complaint with the supervisory authority, in this case, the Spanish Data Protection Agency, if you consider that the processing of personal data concerning you infringes the Regulation.
+                The pages of this website may include embedded content (e.g., videos, images, articles, etc.). Embedded content from other websites behaves in exactly the same way as if you had visited the other website.
+                These websites may collect data about you, use cookies, embed additional third-party tracking code, and monitor your interaction using this code.
+                <strong> <br> Content from other websites  <br> </strong> Pages on this website may include embedded content (e.g., videos, images, articles, etc.). Embedded content from other websites behaves in exactly the same way as if you had visited the other website.
+                These websites may collect data about you, use cookies, embed additional third-party tracking code, and monitor your interaction using this code.
+                <strong> <br> Cookie Policy <br> </strong> For this website to function properly it needs to use cookies, which is information that is stored in your web browser.
+                In the Cookies Policy page you can consult all the information related to the collection policy, the purpose and treatment of cookies.
+                This site and its components are provided for informational purposes only; this site is not responsible for the accuracy, usefulness or availability of any information transmitted or made available through this site and shall not be liable for any errors or omissions in such information" This type of provision will help you avoid liability in the event that a user relies on your information and that causes a problem.
+                The site and its original content, features and functionality are the property of ILanguage S.A.C. and are protected by international copyright, trademark, patent, trade secret and other intellectual property or proprietary rights laws.
+                The company reserves the right to modify these terms from time to time as it sees fit; furthermore, your continued use of the site will signify your acceptance of any adjustment to such terms. If there are any changes to our privacy policy, we will post notices on our home page and other important pages of our site that such changes have been made. If there are any changes on our site regarding how we use our customers' personally identifiable information, we will send a notice by e-mail or postal mail to those who are affected by the change. Any changes to our privacy policy will be posted on our site 30 days before such changes occur. Therefore, you are encouraged to re-read this statement on a regular basis.
 
               </v-card-text>
               <v-card-actions>
@@ -87,7 +88,7 @@
         </v-row>
       </v-card-text>
       <v-card-text class="white--text pt-0">
-        <strong>ILanguage</strong> es una aplicación web y móvil que permite aprender y/o perfeccionar diversos idiomas. Los usuarios son personas que quieran especializarse o practicar más algún idioma. Por ello, es un requisito que los usuarios tengan un conocimiento básico, por lo menos. La app contará con una sola versión, la cual es mediante suscripciones.
+        <strong>ILanguage</strong> is a web and mobile application that allows you to learn and/or improve various languages. Users are people who want to specialize in or further practice a language. Therefore, it is a requirement that users have at least a basic knowledge. The app will have only one version, which is through subscriptions.
       </v-card-text>
 
       <v-divider></v-divider>
@@ -106,16 +107,16 @@ export default {
     return {
       dialog: false,
       datosPersonales: [
-        {id:1, content:"Al contactar a través de los formularios de contacto o enviar un correo electrónico."},
-        {id:2, content: "Al realizar un comentario en un artículo o página."},
-        {id:3, content: "Al inscribirte en un formulario de suscripción"}
+        {id:1, content:"By contacting us through the contact forms or sending an e-mail."},
+        {id:2, content: "When commenting on an article or page."},
+        {id:3, content: "When you sign up for a subscription form"}
       ],
       derechos:[
-        {id:1,content: "Solicitar el acceso a los datos almacenado"},
-        {id:2,content:"Solicitar una rectificación o la cancelación"},
-        {id:3,content:"Solicitar la limitación de su tratamiento"},
-        {id:4,content:"Oponerte al tratamiento"},
-        {id:5,content:"Solicitar la portabilidad de tus datos"}
+        {id:1,content: "Request access to stored data"},
+        {id:2,content:"Request rectification or cancellation"},
+        {id:3,content:"Request the limitation of your treatment"},
+        {id:4,content:"Oppose treatment"},
+        {id:5,content:"Request the portability of your data"}
       ]
     }
 

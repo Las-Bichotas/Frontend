@@ -18,15 +18,12 @@
               Suscribete ya
             </h1>
             <p class="text-h6">
-              Suscribete ya y vive la mejor experiencia en aprendizaje de
-              idiomas aprendiendo con tutores nativos. Ten conversaciones con
-              hablantes nativos y practica tu fluides en nuestra app.
+              Subscribe now and live the best language learning experience learning with native tutors. Have conversations with native speakers and practice your fluency in our app.
             </p>
             <v-divider class="mb-4"></v-divider>
 
             <p class="text-h6">
-              Unete a nuestro staff de tutores y comparte tus conocimientos en
-              tu idioma
+              Join our staff of tutors and share your knowledge in your own language.
             </p>
             <router-link :to="{name: 'Login'}">
             <v-btn block large color="primary" elevation="6" class="mb-5" >Login</v-btn></router-link>
