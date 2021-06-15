@@ -3,8 +3,7 @@
 
     <div id="app">
       <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
+       <navbar class="nvbar"></navbar>
       </div>
       <router-view />
     </div>
@@ -18,10 +17,12 @@
 
 <script>
 import BadgeComponent from "@/components/badge-component";
+import Navbar from "@/components/Navbar";
 export default {
   name: 'App',
 
   components: {
+    Navbar,
     BadgeComponent,
   },
 
@@ -40,7 +41,7 @@ export default {
 }
 
 #nav {
-  padding: 30px;
+
 
   a {
     font-weight: bold;
@@ -50,5 +51,9 @@ export default {
       color: #42b983;
     }
   }
+}
+
+.nvbar{
+
 }
 </style>
