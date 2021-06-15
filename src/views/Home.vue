@@ -2,14 +2,6 @@
   <div class="home">
 
     <banner></banner>
-    <!--v-row>
-      <v-col cols="6">
-        <more-spoken></more-spoken>
-      </v-col>
-      <v-col cols="6">
-        <more-spoken></more-spoken>
-      </v-col>
-    </v-row-->
     <more-spoken></more-spoken>
 
     <v-row>
@@ -22,9 +14,9 @@
     </v-container>
       </v-col>
     </v-row>
-    <testimonials></testimonials>
+    <testimonials v-bind:user-visibility="true"></testimonials>
     <badge-component></badge-component>
-
+    <testimonials v-bind:tutor-visibility="true"></testimonials>
     <call-to-login></call-to-login>
 
     <Footer> </Footer>

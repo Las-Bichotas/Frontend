@@ -1,14 +1,14 @@
 <template>
   <v-container>
     <br>
-    <h2 class="text-h3 text-lg-h3 text-md-h3 text-sm-h3 mb-5 text-center" v-if="visitility">Testimonials from our users</h2>
-    <h2 class="text-h3 text-lg-h3 text-md-h3 text-sm-h3 mb-5 text-center" v-else>Testimonials from our tutors</h2>
+    <h2 class="text-h3 text-lg-h3 text-md-h3 text-sm-h3 mb-5 text-center" v-if="userVisibility">Testimonials from our users</h2>
+    <h2 class="text-h3 text-lg-h3 text-md-h3 text-sm-h3 mb-5 text-center" v-if="tutorVisibility">Testimonials from our tutors</h2>
     <v-row gutters>
       <v-col cols="6" md="6" sm="12" xs="12" v-for="(user, index) in users" :key="index">
 
         <v-card elevation="20">
 
-          <div v-if="index <= 3 && visitility">
+          <div v-if="index <= 3 && userVisibility">
             <v-img height="200px" :src=user.img>
               <v-avatar size="150" class="avatar justify-center">
                 <img :src=user.avatar alt="John">
@@ -30,7 +30,7 @@
             </v-card-text>
           </div>
 
-          <div v-else-if="index >= 4 && !visitility" >
+          <div v-else-if="index >= 4 && tutorVisibility" >
             <v-img height="200px" :src=user.img>
               <v-avatar size="150" class="avatar justify-center">
                 <img :src=user.avatar alt="John">
@@ -73,10 +73,9 @@ export default {
         { name: 'HIROTO WATANABE - JAPAN', img: 'https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', avatar: 'https://images.pexels.com/photos/8090289/pexels-photo-8090289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' },
         { name: 'DENISKA KUZNETSOV - RUSSIA', img: 'https://images.pexels.com/photos/310452/pexels-photo-310452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg' },
       ],
-      visitility: true
     }
   },
-  props: {  userVisibility: Boolean }
+  props: {  userVisibility: Boolean, tutorVisibility: Boolean }
 }
 </script>
 
