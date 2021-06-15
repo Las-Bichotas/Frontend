@@ -2,11 +2,12 @@
   <div>
     <h1 class="text-h2 text-lg-h1 text-md-h2 text-sm-h2 mb-5 text-center">Insignias</h1>
     <p class="text-lg-h7 text-center">
-      Estas son algunas de las insignias que se puede conseguir en nuestra aplicación. Estas diferentes insignias son para los estudiantes y profesores con las cuales pueden mostrarlas a los demás usuarios que visitan sus perfiles.
+      Estas son algunas de las insignias que se puede conseguir en nuestra aplicación. Estas diferentes insignias son
+      para los estudiantes y profesores con las cuales pueden mostrarlas a los demás usuarios que visitan sus perfiles.
     </p>
     <v-container>
       <v-row>
-        <v-card :loading="loading" class="mx-auto my-12" max-width="500">
+        <v-card elevation="2" class="mx-auto my-12" hover max-width="500">
           <v-col>
             <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
               <v-carousel-item
@@ -18,7 +19,7 @@
           </v-col>
         </v-card>
         <h2>Insignias Profesores</h2>
-        <v-card :loading="loading" class="mx-auto my-12" max-width="500">
+        <v-card elevation="2" class="mx-auto my-12" hover max-width="500">
           <v-col>
             <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
               <v-carousel-item
@@ -29,9 +30,9 @@
             </v-carousel>
           </v-col>
         </v-card>
-        <v-spacer></v-spacer>
-
-        <v-card :loading="loading" class="mx-auto my-12" max-width="500">
+      </v-row>
+      <v-row>
+        <v-card elevation="2" class="mx-auto my-12" hover max-width="500">
           <v-col>
             <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
               <v-carousel-item
@@ -44,7 +45,7 @@
         </v-card>
 
         <h2>Insignias Alumnos</h2>
-        <v-card :loading="loading" class="mx-auto my-12" max-width="500">
+        <v-card elevation="2" class="mx-auto my-12" hover max-width="500">
           <v-col>
             <v-carousel :show-arrows="false" hide-delimiters :cycle="true">
               <v-carousel-item
