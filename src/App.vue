@@ -3,26 +3,23 @@
 
     <div id="app">
       <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
+       <navbar class="navbar"></navbar>
       </div>
       <router-view />
     </div>
-    <v-container fluid>
-      <badge-component></badge-component>
-    </v-container>
+
     <br>
 
   </v-app>
 </template>
 
 <script>
-import BadgeComponent from "@/components/badge-component";
+import Navbar from "@/components/navbar";
 export default {
   name: 'App',
 
   components: {
-    BadgeComponent,
+    Navbar,
   },
 
   data: () => ({
@@ -40,7 +37,7 @@ export default {
 }
 
 #nav {
-  padding: 30px;
+
 
   a {
     font-weight: bold;
@@ -50,5 +47,9 @@ export default {
       color: #42b983;
     }
   }
+}
+
+.nvbar{
+
 }
 </style>

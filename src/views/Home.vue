@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <navbar></navbar>
+
     <banner></banner>
     <!--v-row>
       <v-col cols="6">
@@ -23,7 +23,10 @@
       </v-col>
     </v-row>
     <testimonials></testimonials>
+    <badge-component></badge-component>
+
     <call-to-login></call-to-login>
+
     <Footer> </Footer>
   </div>
 </template>
@@ -34,18 +37,19 @@
 import Footer from "@/components/footer";
 import Banner from "@/components/banner";
 import CallToLogin from "@/components/call-to-register";
-import Navbar from "@/components/navbar";
 import RankingStudent from "@/components/ranking-student";
 import Testimonials from "../components/testimonials";
 import MoreSpoken from "../components/more-spoken";
 import Studentfeedback from '../components/studentfeedback.vue';
+import BadgeComponent from "../components/badge-component";
 export default {
   name: "Home",
   components: {
+
+    BadgeComponent,
     MoreSpoken,
     Testimonials,
     RankingStudent,
-    Navbar,
     CallToLogin,
     Banner,
     Footer,

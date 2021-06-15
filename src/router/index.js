@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from "@/views/Login";
 import Register from "@/views/Register";
+import Main from "@/views/Main";
+import Subscriptions from "@/views/Subscription";
 
 Vue.use(VueRouter)
 
@@ -37,6 +39,16 @@ const routes = [
     path: '/register',
     name:'Register',
     component: Register
+  },
+  {
+    path: '/subscriptions',
+    name:'Subscriptions',
+    component: Subscriptions
+  },
+  {
+    path: '/user/:userId',
+    name:'Main',
+    component: Main
   }
 
 ]
@@ -46,5 +58,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+
 
 export default router

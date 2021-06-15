@@ -12,11 +12,13 @@
     >
 
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"></v-app-bar-nav-icon>
-      <v-toolbar-title>ILanguage</v-toolbar-title>
+      <router-link :to="{name: 'Home'}">
+      <v-toolbar-title class="homeBtn">ILanguage</v-toolbar-title></router-link>
       <v-spacer></v-spacer>
 
 
           <v-toolbar-items class="hidden-sm-and-down" >
+            <router-link :to="{name: 'Register'}">
           <v-btn
 
               color="red"
@@ -30,7 +32,9 @@
               mdi-robot
             </v-icon>
           </v-btn>
+            </router-link>
 
+            <router-link :to="{name: 'Login'}">
           <v-btn
 
               color="success"
@@ -45,6 +49,7 @@
               mdi-robot-happy
             </v-icon>
           </v-btn>
+            </router-link>
           </v-toolbar-items>
 
 
@@ -127,3 +132,13 @@ export default {
   }),
 }
 </script>
+
+<style scoped>
+.homeBtn{
+text-decoration: none !important;
+  color: #ffffff;
+  text-outline: none;
+
+}
+
+</style>

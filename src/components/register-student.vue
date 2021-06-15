@@ -14,7 +14,10 @@
         <v-row>
         <v-col
             cols="12"
-            sm="3"
+
+            sm="6"
+            md="3"
+            xs="1"
         >
           <v-text-field
               v-model="state.newName"
@@ -29,7 +32,9 @@
         </v-col>
         <v-col
             cols="12"
-            sm="3"
+            sm="5"
+            md="3"
+            xs="1"
         >
           <v-text-field
               v-model="state.newLastName"
@@ -38,6 +43,7 @@
               clearable
               :rules="state.nameRules"
               :counter="30"
+              class="txtLastName"
           ></v-text-field>
 
         </v-col>
@@ -46,7 +52,9 @@
 
           <v-col
               cols="12"
-              sm="6"
+              sm="12"
+              md="5"
+              xs="1"
           >
             <v-text-field
                 v-model="state.newEmail"
@@ -62,7 +70,9 @@
      <v-row>
           <v-col
               cols="12"
-              sm="6"
+              sm="12"
+              md="6"
+              xs="1"
           >
             <v-text-field
                 v-model="state.newDescription"
@@ -77,6 +87,8 @@
           </v-col>
         </v-row>
         <v-row>
+          <router-link :to="{name: 'Subscriptions'}">
+
           <v-btn
               color="primary"
               elevation="2"
@@ -84,7 +96,7 @@
               rounded
               class="btnCrearCuenta"
               v-on:click="createNewAccount"
-          >Crear cuenta </v-btn>
+          >Crear cuenta </v-btn> </router-link>
         </v-row>
       </v-card>
     </div>
@@ -99,7 +111,7 @@ import { reactive } from '@vue/composition-api'
 
 
 export default {
-  name: "register-component",
+  name: "register-student",
   setup(){
     const axios = require('axios');
 
@@ -130,9 +142,15 @@ export default {
         description : state.newDescription,
         email : state.newEmail
       })
-      .then(res => console.log(res))
+      .then(function (response) {
+        console.log(response)
+      /*  if(response.status === 201){
+          this.$router.push('/')
+        }*/
+      })
       .catch(err => console.log(err))
     }
+
 
 
 
@@ -151,35 +169,131 @@ export default {
 
 
 <style scoped>
-.mainCard{
-  width: 70%;
-  margin-left: 15%;
-  margin-top: 20%;
-  height: 50%;
-}
-
-.ss{
+.ss {
   background-image: url("../assets/wave.svg") !important;
   width: 100%;
   height: 100%;
   background-color: #faf4f4;
 }
-.nameCard{
-  padding-left:10%;
-}
-.mainImgCard{
-  width: 60%;
-  height: 90%;
-  margin-left:15%;
-}
-.card_txt{
-  padding-left:5%;
-}
-.btnCrearCuenta{
-  margin-left:20% !important;
-}
-.card_dcp{
-  padding-left:5%;
+
+@media (min-width:960px) {
+  .mainCard{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 20%;
+    height: 50%;
+  }
+  .nameCard{
+    padding-left:10%;
+  }
+
+  .card_txt{
+    padding-left:5%;
+  }
+
+  .card_dcp{
+    padding-left:5%;
+
+  }
+
+  .btnCrearCuenta{
+    margin-left:20% !important;
+    alignment-baseline: center !important;
+    alignment: center !important;
+  }
+
+  .cmblanguages{
+    padding-left:5%;
+  }
 
 }
+
+@media (max-width:599px) {
+  .mainCard{
+    width: 90%;
+    margin-left: 3%;
+    margin-top: 20%;
+
+  }
+  .nameCard{
+    padding-left:5%;
+    width: 90%;
+  }
+
+  .card_txt{
+    padding-left:5%;
+    width: 90%;
+  }
+
+  .card_dcp{
+    padding-left:5%;
+    width: 90%;
+  }
+
+  .btnCrearCuenta{
+    margin-left:20% !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+
+  }
+
+  .cmblanguages{
+    padding-left:5%;
+    width: 90%;
+  }
+  .txtLastName{
+    padding-left:5%;
+    width: 90%;
+  }
+  .subtitl{
+    padding-left:30%;
+  }
+
+}
+
+
+
+@media (min-width:600px) and (max-width: 959px) {
+  .mainCard{
+    width: 90%;
+    margin-left: 3%;
+    margin-top: 20% !important;
+
+  }
+  .nameCard{
+    padding-left:10%;
+    width: 90%;
+  }
+
+  .card_txt{
+    padding-left:5%;
+    width: 90%;
+  }
+
+  .card_dcp{
+    padding-left:5%;
+    width: 90%;
+  }
+
+  .btnCrearCuenta{
+    margin-left:20% !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+
+  }
+
+  .cmblanguages{
+    padding-left:5%;
+    width: 90%;
+  }
+  .txtLastName{
+    padding-left:0%;
+    width: 100%;
+  }
+  .subtitl{
+    padding-left:30%;
+  }
+
+}
+
 </style>
