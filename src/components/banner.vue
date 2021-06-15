@@ -15,10 +15,12 @@
               elijas
             </p>
             <v-card-actions>
+              <router-link :to="{name: 'Login'}">
               <v-btn large color="primary" elevation="3" class="mr-2">
                 Login</v-btn
-              >
-              <v-btn large elevation="3"> Register</v-btn>
+              > </router-link>
+              <router-link :to="{name: 'Register'}">
+                <v-btn large elevation="3"> Register</v-btn> </router-link>
             </v-card-actions>
           </div>
         </v-col>

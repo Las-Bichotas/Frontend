@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <navbar></navbar>
+
     <banner></banner>
     <!--v-row>
       <v-col cols="6">
@@ -34,7 +34,6 @@
 import Footer from "@/components/footer";
 import Banner from "@/components/banner";
 import CallToLogin from "@/components/call-to-register";
-import Navbar from "@/components/Navbar";
 import RankingStudent from "@/components/RankingStudent";
 import Testimonials from "../components/testimonials";
 import MoreSpoken from "../components/more-spoken";
@@ -45,7 +44,6 @@ export default {
     MoreSpoken,
     Testimonials,
     RankingStudent,
-    Navbar,
     CallToLogin,
     Banner,
     Footer,

@@ -48,20 +48,23 @@
             ></v-text-field>
 
             <v-card-actions>
+              <router-link :to="{name: 'Main'}">
               <v-btn
                   color="deep-purple lighten-2"
                   text
                   @click="reserve"
               >
                 Iniciar
-              </v-btn>
+              </v-btn></router-link>
+
+              <router-link :to="{name:'Home'}">
               <v-btn
                   color="deep-purple lighten-2"
                   text
                   @click="regresar"
               >
                 Regresar
-              </v-btn>
+              </v-btn></router-link>
             </v-card-actions>
           </v-card>
         </v-form>
