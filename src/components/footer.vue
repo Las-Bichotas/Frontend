@@ -46,7 +46,7 @@
                      {{ datoPersonal.content }}
                   </li>
                 </ul>
-                <strong  ><br>Tus derechos <br> </strong> El Titular te informa que sobre tus datos personales tienes derecho a: /n
+                <strong  ><br>Your rights <br> </strong> The Data Controller informs you that you have the right to:
                 <ul id="example-1">
                   <li v-for="(derecho) in derechos" v-bind:key="derecho.id">
                     {{ derecho.content }}

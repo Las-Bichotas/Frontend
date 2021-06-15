@@ -34,7 +34,7 @@
                           class="d-flex transition-fast-in-fast-out primary darken-2 v-card--reveal text-h2 white--text"
                           style="height: 100%;"
                       >
-                        Tutor nativo
+                        Native tutor
                       </div>
                     </v-expand-transition>
 
@@ -45,7 +45,7 @@
                   <v-card-text class="text--primary">
 
 
-                    <div>Registrate como un tutor, especializado en uno o varios lenguajes a nivel nativo.</div>
+                    <div>Register as a tutor, specialized in one or more languages at native level.</div>
                   </v-card-text>
 
                   <v-card-actions>
@@ -54,7 +54,7 @@
                         text
                         @click="makeTutortTrue"
                     >
-                      Seleccionar
+                      Select
                     </v-btn>
 
 
@@ -97,18 +97,18 @@
                           class="d-flex transition-fast-in-fast-out primary darken-2 v-card--reveal text-h2 white--text"
                           style="height: 100%;"
                       >
-                        Estudiante
+                        Student
                       </div>
                     </v-expand-transition>
 
-                    <v-card-title>Estudiante</v-card-title>
+                    <v-card-title>Student</v-card-title>
                   </v-img>
 
 
                   <v-card-text class="text--primary">
 
 
-                    <div>Registrate como un estudiante, capacitate en uno o mas lenguajes con tutores nativos.</div>
+                    <div>Register as a student, get trained in one or more languages with native tutors.</div>
                   </v-card-text>
 
                   <v-card-actions>
@@ -117,7 +117,7 @@
                         text
                         @click="makeStudentTrue"
                     >
-                      Seleccionar
+                      Select
                     </v-btn>
 
 
