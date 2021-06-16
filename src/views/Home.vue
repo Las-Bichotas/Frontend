@@ -9,9 +9,9 @@
         <ranking-student></ranking-student>
       </v-col>
       <v-col cols="12" md="8">
-        <v-container fluid>
+        <div>
           <studentfeedback></studentfeedback>
-        </v-container>
+        </div>
       </v-col>
     </v-row>
     <testimonials v-bind:tutor-visibility="true"></testimonials>
