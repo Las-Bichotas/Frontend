@@ -18,7 +18,7 @@
         >
           <div>
             <h1 class="text-h3 text-lg-h1 text-md-h2 text-sm-h2 mb-6">
-              Suscribete ya
+              Subscribe now
             </h1>
             <p class="text-h6 text-justify">
               Subscribe now and live the best language learning experience
@@ -35,7 +35,8 @@
               <router-link :to="{ name: 'Login' }">
                 <v-btn block large color="primary" elevation="6" class="mb-5"
                   >Login</v-btn
-                ></router-link>
+                ></router-link
+              >
               <router-link :to="{ name: 'Register' }">
                 <v-btn block large elevation="6" outlined>
                   Register</v-btn
