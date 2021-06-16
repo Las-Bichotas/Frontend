@@ -21,6 +21,7 @@
         <v-container>
           <v-col>
             <div>
+              <br>
               <v-row class="d-flex justify-center align-center">
                 <div>
                   <v-rating color="warning" half-increments hover length="5" size="25" value="4"></v-rating>
