@@ -12,7 +12,6 @@
     </v-img>
 
 
-
     <v-card-text class="text--primary">
 
 
@@ -36,20 +35,23 @@
 <script>
 import Vue from 'vue'
 import VueCompositionAPI from '@vue/composition-api'
+
 Vue.use(VueCompositionAPI)
-import { reactive } from '@vue/composition-api'
+import {reactive} from '@vue/composition-api'
 
 
 export default {
   name: "tutor-card",
-  setup(){
+  setup() {
     const state = reactive({
-      selected : false
+      selected: false
     })
-    function makeSelectedTrue(){
+
+    function makeSelectedTrue() {
       state.selected = true
     }
-    return{
+
+    return {
       state,
       makeSelectedTrue
     }
