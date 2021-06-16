@@ -7,27 +7,25 @@
       The user who is qualified will be able to see the qualifications that are given in percentages that the
       application will provide.
     </p>
-    <v-row no-gutters>
-
+    <v-row>
       <v-col cols="12" sm="6" md="3" xs="1">
-
         <v-container>
           <v-img class="align-center justify-center" width="800px" height="250px" src="../assets/student1.png"></v-img>
           <h2 class="text-center">Juan carlos</h2>
         </v-container>
-
       </v-col>
       <v-col xs="1">
-        <v-container>
-          <v-col>
+        <v-container class="text-center align-center justify-center">
+          <v-col class="justify-center align-center">
             <div>
-              <br>
-              <v-row class="d-flex justify-center align-center">
+              <v-row class="justify-center align-center text-cen">
                 <div>
+                  <br>
+                  <br>
                   <v-rating color="warning" half-increments hover length="5" size="25" value="4"></v-rating>
                 </div>
               </v-row>
-              <v-row class="d-flex justify-center align-center">
+              <v-row>
                 <v-col>
                   1 Estrellas
                   <v-progress-circular
@@ -82,17 +80,19 @@
             </div>
           </v-col>
         </v-container>
-
       </v-col>
     </v-row>
   </div>
 </template>
 
-
 <script>
 export default {
   name: "studentfeedback",
-  data: () => ({}),
+  data: () => ({
+    alignments: [
+      'center',
+    ],
+  }),
 }
 </script>
 <style scoped>
