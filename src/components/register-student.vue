@@ -12,43 +12,43 @@
         <v-divider></v-divider>
         <br>
         <v-row>
-        <v-col
-            cols="12"
+          <v-col
+              cols="12"
 
-            sm="6"
-            md="3"
-            xs="1"
-        >
-          <v-text-field
-              v-model="state.newName"
-              label="First Name"
-              outlined
-              clearable
-              class="nameCard"
-              :rules="state.nameRules"
-              :counter="30"
-          ></v-text-field>
+              sm="6"
+              md="3"
+              xs="1"
+          >
+            <v-text-field
+                v-model="state.newName"
+                label="First Name"
+                outlined
+                clearable
+                class="nameCard"
+                :rules="state.nameRules"
+                :counter="30"
+            ></v-text-field>
 
-        </v-col>
-        <v-col
-            cols="12"
-            sm="5"
-            md="3"
-            xs="1"
-        >
-          <v-text-field
-              v-model="state.newLastName"
-              label="Last Name"
-              outlined
-              clearable
-              :rules="state.nameRules"
-              :counter="30"
-              class="txtLastName"
-          ></v-text-field>
+          </v-col>
+          <v-col
+              cols="12"
+              sm="5"
+              md="3"
+              xs="1"
+          >
+            <v-text-field
+                v-model="state.newLastName"
+                label="Last Name"
+                outlined
+                clearable
+                :rules="state.nameRules"
+                :counter="30"
+                class="txtLastName"
+            ></v-text-field>
 
-        </v-col>
+          </v-col>
         </v-row>
-   <v-row>
+        <v-row>
 
           <v-col
               cols="12"
@@ -66,8 +66,8 @@
             ></v-text-field>
 
           </v-col>
-   </v-row>
-     <v-row>
+        </v-row>
+        <v-row>
           <v-col
               cols="12"
               sm="12"
@@ -87,16 +87,18 @@
           </v-col>
         </v-row>
         <v-row>
-          <router-link :to="{name: 'Subscriptions'}">
+          <router-link :to="{name: 'subscriptions'}">
 
-          <v-btn
-              color="primary"
-              elevation="2"
-              outlined
-              rounded
-              class="btnCrearCuenta"
-              v-on:click="createNewAccount"
-          >Crear cuenta </v-btn> </router-link>
+            <v-btn
+                color="primary"
+                elevation="2"
+                outlined
+                rounded
+                class="btnCrearCuenta"
+                v-on:click="createNewAccount"
+            >Crear cuenta
+            </v-btn>
+          </router-link>
         </v-row>
       </v-card>
     </div>
@@ -106,21 +108,22 @@
 <script>
 import Vue from 'vue'
 import VueCompositionAPI from '@vue/composition-api'
+
 Vue.use(VueCompositionAPI)
-import { reactive } from '@vue/composition-api'
+import {reactive} from '@vue/composition-api'
 
 
 export default {
   name: "register-student",
-  setup(){
+  setup() {
     const axios = require('axios');
 
-    const state = reactive ({
-      newName:'',
-      newEmail:'',
-      newDescription:'',
-      newLastName:'',
-      valid : false,
+    const state = reactive({
+      newName: '',
+      newEmail: '',
+      newDescription: '',
+      newLastName: '',
+      valid: false,
       nameRules: [
         v => !!v || 'Name is required',
         v => v.length <= 20 || 'Name must be less than 20 characters',
@@ -135,27 +138,24 @@ export default {
       ]
     })
 
-    function createNewAccount(){
+    function createNewAccount() {
       axios.post('https://60c2e09f917002001739da47.mockapi.io/user', {
         name: state.newName,
-        lastname : state.newLastName,
-        description : state.newDescription,
-        email : state.newEmail
+        lastname: state.newLastName,
+        description: state.newDescription,
+        email: state.newEmail
       })
-      .then(function (response) {
-        console.log(response)
-      /*  if(response.status === 201){
-          this.$router.push('/')
-        }*/
-      })
-      .catch(err => console.log(err))
+          .then(function (response) {
+            console.log(response)
+            /*  if(response.status === 201){
+                this.$router.push('/')
+              }*/
+          })
+          .catch(err => console.log(err))
     }
 
 
-
-
-
-    return{
+    return {
       state,
       createNewAccount
     }
@@ -163,9 +163,6 @@ export default {
 
 }
 </script>
-
-
-
 
 
 <style scoped>
@@ -176,122 +173,128 @@ export default {
   background-color: #faf4f4;
 }
 
-@media (min-width:960px) {
-  .mainCard{
+@media (min-width: 960px) {
+  .mainCard {
     width: 70%;
     margin-left: 15%;
     margin-top: 20%;
     height: 50%;
   }
-  .nameCard{
-    padding-left:10%;
+
+  .nameCard {
+    padding-left: 10%;
   }
 
-  .card_txt{
-    padding-left:5%;
+  .card_txt {
+    padding-left: 5%;
   }
 
-  .card_dcp{
-    padding-left:5%;
+  .card_dcp {
+    padding-left: 5%;
 
   }
 
-  .btnCrearCuenta{
-    margin-left:20% !important;
+  .btnCrearCuenta {
+    margin-left: 20% !important;
     alignment-baseline: center !important;
     alignment: center !important;
   }
 
-  .cmblanguages{
-    padding-left:5%;
+  .cmblanguages {
+    padding-left: 5%;
   }
 
 }
 
-@media (max-width:599px) {
-  .mainCard{
+@media (max-width: 599px) {
+  .mainCard {
     width: 90%;
     margin-left: 3%;
     margin-top: 20%;
 
   }
-  .nameCard{
-    padding-left:5%;
+
+  .nameCard {
+    padding-left: 5%;
     width: 90%;
   }
 
-  .card_txt{
-    padding-left:5%;
+  .card_txt {
+    padding-left: 5%;
     width: 90%;
   }
 
-  .card_dcp{
-    padding-left:5%;
+  .card_dcp {
+    padding-left: 5%;
     width: 90%;
   }
 
-  .btnCrearCuenta{
-    margin-left:20% !important;
+  .btnCrearCuenta {
+    margin-left: 20% !important;
     margin-bottom: 0px !important;
     padding-bottom: 0px !important;
 
   }
 
-  .cmblanguages{
-    padding-left:5%;
+  .cmblanguages {
+    padding-left: 5%;
     width: 90%;
   }
-  .txtLastName{
-    padding-left:5%;
+
+  .txtLastName {
+    padding-left: 5%;
     width: 90%;
   }
-  .subtitl{
-    padding-left:30%;
+
+  .subtitl {
+    padding-left: 30%;
   }
 
 }
 
 
-
-@media (min-width:600px) and (max-width: 959px) {
-  .mainCard{
+@media (min-width: 600px) and (max-width: 959px) {
+  .mainCard {
     width: 90%;
     margin-left: 3%;
     margin-top: 20% !important;
 
   }
-  .nameCard{
-    padding-left:10%;
+
+  .nameCard {
+    padding-left: 10%;
     width: 90%;
   }
 
-  .card_txt{
-    padding-left:5%;
+  .card_txt {
+    padding-left: 5%;
     width: 90%;
   }
 
-  .card_dcp{
-    padding-left:5%;
+  .card_dcp {
+    padding-left: 5%;
     width: 90%;
   }
 
-  .btnCrearCuenta{
-    margin-left:20% !important;
+  .btnCrearCuenta {
+    margin-left: 20% !important;
     margin-bottom: 0px !important;
     padding-bottom: 0px !important;
 
   }
 
-  .cmblanguages{
-    padding-left:5%;
+  .cmblanguages {
+    padding-left: 5%;
     width: 90%;
   }
-  .txtLastName{
-    padding-left:0%;
+
+  .txtLastName {
+    padding-left: 0%;
     width: 100%;
   }
-  .subtitl{
-    padding-left:30%;
+
+  .subtitl {
+    padding-left: 30%;
   }
 
 }
