@@ -3,39 +3,23 @@
   <div id = "app">
     <v-app-bar
         color="primary"
-
+dark
         elevate-on-scroll
         scroll-target="#scrolling-techniques-7"
     >
 
-      <v-app-bar-nav-icon       @click="drawer = !drawer" ></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon  @click="drawer = !drawer" ></v-app-bar-nav-icon>
       <router-link :to="{name: 'Home'}">
       <v-toolbar-title class="homeBtn">ILanguage</v-toolbar-title></router-link>
       <v-spacer></v-spacer>
-
-
-          <v-toolbar-items class="hidden-sm-and-down" >
-
-              <router-link :to="{name: 'Register'}">
-                <v-btn large color="primary" > Register</v-btn> </router-link>
-
-            <router-link :to="{name: 'Login'}">
-              <v-btn large color="primary"  flat >
-                Login</v-btn
-              > </router-link>
+          <v-toolbar-items class="hidden-sm-and-down"  >
+              <v-btn  color="primary" v-for="navH in navhome" :key="navH.text" router :to="navH.route" elevation="3">
+              {{ navH.text }}</v-btn>
           </v-toolbar-items>
-
-
     </v-app-bar>
-
-
-
     <v-sheet
         id="scrolling-techniques-7"
-        class="overflow-y-auto"
-
-    >
-
+        class="overflow-y-auto">
     </v-sheet>
 
     <v-navigation-drawer
@@ -53,41 +37,15 @@
             v-model="group"
             active-class="blue--text text--accent-4"
         >
-          <v-list-item>
+          <v-list-item v-for="link in navidrahome" :key="link.text" router :to="link.route">
             <v-list-item-icon>
-              <v-icon>mdi-home</v-icon>
+              <v-icon> {{ link.icon }} </v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Home</v-list-item-title>
+
+              <v-list-item-title >{{ link.text }}</v-list-item-title>
           </v-list-item>
 
 
-
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-account</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Student</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-account-tie</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Teacher</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-account-circle</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Login</v-list-item-title>
-          </v-list-item>
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-cloud</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Register</v-list-item-title>
-          </v-list-item>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -101,6 +59,14 @@ export default {
   name: "navbar",
   data: () => ({
     drawer: false,
+    navidrahome: [
+      { icon: 'mdi-account-circle', text: 'Login', route: 'Login' },
+      { icon: 'mdi-cloud', text: 'Register', route: 'Register' },
+    ],
+    navhome: [
+      {  text: 'Login', route: 'Login' },
+      {  text: 'Register', route: 'Register' },
+    ],
     group: null,
   }),
 }
@@ -113,5 +79,10 @@ text-decoration: none !important;
   text-outline: none;
 
 }
+.NavDr{
+  text-decoration: none !important;
+  color: black;
+  text-outline: none;
 
+}
 </style>
