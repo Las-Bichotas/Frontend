@@ -7,9 +7,6 @@
       </div>
       <router-view />
     </div>
-
-    <br>
-
   </v-app>
 </template>
 
