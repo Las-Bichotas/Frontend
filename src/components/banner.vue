@@ -13,14 +13,14 @@
             <p class="text-subtitle-1">
               Have a conversation with our native tutors on the topic of your choice.
             </p>
-            <v-card-actions>
+            <div>
               <router-link :to="{name: 'Login'}">
-              <v-btn large color="primary" elevation="3" class="mr-2">
-                Login</v-btn
-              > </router-link>
+                <v-btn large color="primary" elevation="3" class="mr-2">
+                  Login</v-btn
+                > </router-link>
               <router-link :to="{name: 'Register'}">
                 <v-btn large elevation="3"> Register</v-btn> </router-link>
-            </v-card-actions>
+            </div>
           </div>
         </v-col>
         <v-col lg="6">
