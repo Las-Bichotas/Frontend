@@ -60,6 +60,7 @@ export default {
   data: () => ({
     drawer: false,
     navidrahome: [
+      { icon: 'mdi-account-tie', text: 'Profile', route: 'Profile' },
       { icon: 'mdi-account-circle', text: 'Login', route: 'Login' },
       { icon: 'mdi-cloud', text: 'Register', route: 'Register' },
     ],
