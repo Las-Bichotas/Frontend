@@ -2,8 +2,8 @@
   <v-layout row wrap align-center>
     <v-flex xs8 offset-md2 offset-2>
       <div v-for="session in sessions" :key="session.title">
-        <v-card elevation="2" class="mx-auto" hover >
-          <v-card-title>{{session.title}}</v-card-title>
+        <v-card elevation="2" class="mx-auto my-3" data-aos-easing="ease">
+          <v-card-title>{{session.title}} {{session.id}}</v-card-title>
           <v-card-text>
             <v-chip-group column>
               <v-chip>{{session.init}}</v-chip>
@@ -22,8 +22,8 @@
             </v-chip-group>
           </v-card-text>
           <v-card-actions>
-            <v-btn>ENTRAR</v-btn>
             <v-btn>CANCELAR</v-btn>
+            <v-btn color="primary">ENTRAR</v-btn>
           </v-card-actions>
         </v-card>
       </div>
@@ -34,8 +34,32 @@
 <script>
 export default {
   name: "session",
+  data() {
+    return {
+      sessions: [
+        {
+          id:1,
+          title: "Session",
+          init: "7:00pm",
+          finish: "8:00pm",
+          description:"In the conversation you have to bring topics on the topic to discuss.",
+          topic: "Math",
+          language: "English"
+        },
+        {
+          id:2,
+          title: "Session",
+          init: "6:00pm",
+          finish: "7:00pm",
+          description:"In the conversation you have to bring topics on the topic to discuss.",
+          topic: "Vue js",
+          language: "English"
+        }
+      ],
+    }
+  },
+
   props: {
-    sessions: Array,
   },
 };
 </script>

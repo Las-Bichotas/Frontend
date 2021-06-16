@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <h1></h1>
+    <session></session>
   </v-app>
 </template>
 
@@ -9,8 +9,10 @@ import Vue from "vue";
 import VueCompositionAPI from "@vue/composition-api";
 Vue.use(VueCompositionAPI);
 import { reactive, onMounted } from "@vue/composition-api";
+import session from '../components/session.vue';
 
 export default {
+  components: { session },
   name: "Main",
 
   setup() {
