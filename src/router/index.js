@@ -5,6 +5,7 @@ import Login from "@/views/Login";
 import Register from "@/views/Register";
 import Main from "@/views/Main";
 import Subscriptions from "@/views/Subscription";
+import profile from  "@/views/profile";
 
 Vue.use(VueRouter)
 
@@ -49,6 +50,11 @@ const routes = [
     path: '/user/:userId',
     name:'Main',
     component: Main
+  },
+  {
+    path: '/user/profile/:userId',
+    name:'profile',
+    component: profile 
   }
 
 ]
