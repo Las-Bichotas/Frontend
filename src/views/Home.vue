@@ -5,10 +5,10 @@
     <badge-component></badge-component>
     <testimonials v-bind:user-visibility="true"></testimonials>
     <v-row>
-      <v-col cols="4">
+      <v-col cols="12" md="4">
         <ranking-student></ranking-student>
       </v-col>
-      <v-col cols="8">
+      <v-col cols="12" md="8">
         <v-container fluid>
           <studentfeedback></studentfeedback>
         </v-container>
