@@ -10,7 +10,7 @@
           >
             <template slot="progress">
               <v-progress-linear
-                  color="deep-purple"
+                  color="primary"
                   height="10"
                   indeterminate
               ></v-progress-linear>
@@ -50,7 +50,7 @@
             <v-card-actions>
               <router-link :to="{name: 'Main'}">
               <v-btn
-                  color="deep-purple lighten-2"
+                  color="primary lighten-2"
                   text
                   @click="reserve"
               >
@@ -59,7 +59,7 @@
 
               <router-link :to="{name:'Home'}">
               <v-btn
-                  color="deep-purple lighten-2"
+                  color="primary lighten-2"
                   text
                   @click="regresar"
               >
@@ -141,7 +141,7 @@ export default {
   background-color: #faf4f4;
 }
 .cardIniciarSecion{
-  color: rebeccapurple;
+  color: #2699fb;
   margin-left: 40%;
   margin-top: 20%;
 }
