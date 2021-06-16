@@ -1,53 +1,56 @@
 <template>
   <div id="app">
     <v-app-bar
-      color="primary"
-      dark
-      elevate-on-scroll
-      scroll-target="#scrolling-techniques-7"
+        color="primary"
+        dark
+        elevate-on-scroll
+        scroll-target="#scrolling-techniques-7"
     >
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <router-link :to="{ name: 'home' }">
         <v-toolbar-title class="homeBtn"
-          >ILanguage</v-toolbar-title
-        ></router-link
+        >ILanguage
+        </v-toolbar-title
+        >
+      </router-link
       >
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn
-          color="primary"
-          v-for="navH in navhome"
-          :key="navH.text"
-          router
-          :to="navH.route"
-          elevation="3"
+            color="primary"
+            v-for="navH in navhome"
+            :key="navH.text"
+            router
+            :to="navH.route"
+            elevation="3"
         >
-          {{ navH.text }}</v-btn
+          {{ navH.text }}
+        </v-btn
         >
       </v-toolbar-items>
     </v-app-bar>
-    <v-sheet id="scrolling-techniques-7" class="overflow-y-auto"> </v-sheet>
+    <v-sheet id="scrolling-techniques-7" class="overflow-y-auto"></v-sheet>
 
     <v-navigation-drawer
-      v-model="drawer"
-      absolute
-      temporary
-      width="200"
-      id="drawer"
+        v-model="drawer"
+        absolute
+        temporary
+        width="200"
+        id="drawer"
     >
       <v-list nav dense>
         <v-list-item-group
-          v-model="group"
-          active-class="blue--text text--accent-4"
+            v-model="group"
+            active-class="blue--text text--accent-4"
         >
           <v-list-item
-            v-for="link in navidrahome"
-            :key="link.text"
-            router
-            :to="link.route"
+              v-for="link in navidrahome"
+              :key="link.text"
+              router
+              :to="link.route"
           >
             <v-list-item-icon>
-              <v-icon> {{ link.icon }} </v-icon>
+              <v-icon> {{ link.icon }}</v-icon>
             </v-list-item-icon>
 
             <v-list-item-title>{{ link.text }}</v-list-item-title>
@@ -69,13 +72,11 @@ export default {
         text: "Profile",
         route: "profile",
       },
-      { icon: "mdi-account-circle", text: "sessions", route: "user" },
-      { icon: "mdi-account-circle", text: "Login", route: "login" },
-      { icon: "mdi-cloud", text: "Register", route: "register" },
+      {icon: "mdi-account-circle", text: "sessions", route: "user"},
     ],
     navhome: [
-      { text: "Login", route: "login" },
-      { text: "Register", route: "register" },
+      {text: "Login", route: "login"},
+      {text: "Register", route: "register"},
     ],
     group: null,
   }),
@@ -88,6 +89,7 @@ export default {
   color: #ffffff;
   text-outline: none;
 }
+
 .NavDr {
   text-decoration: none !important;
   color: black;

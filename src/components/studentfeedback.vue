@@ -40,7 +40,7 @@
                 </v-row>
                 <v-row>
                   <v-col>
-                    1 Estrellas
+                    1 Stars
                     <v-progress-circular
                       value="15"
                       color="purple lighten-3"
@@ -50,7 +50,7 @@
                     </v-progress-circular>
                   </v-col>
                   <v-col>
-                    2 Estrellas
+                    2 Stars
                     <v-progress-circular
                       value="25"
                       color="blue lighten-3"
@@ -60,7 +60,7 @@
                     </v-progress-circular>
                   </v-col>
                   <v-col>
-                    3 Estrellas
+                    3 Stars
                     <v-progress-circular
                       value="45"
                       color="green lighten-1"
@@ -70,7 +70,7 @@
                     </v-progress-circular>
                   </v-col>
                   <v-col>
-                    4 Estrellas
+                    4 Stars
                     <v-progress-circular
                       value="55"
                       color="blue-grey darken-1"
@@ -80,7 +80,7 @@
                     </v-progress-circular>
                   </v-col>
                   <v-col>
-                    5 Estrellas
+                    5 Stars
                     <v-progress-circular
                       value="75"
                       color="amber"

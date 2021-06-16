@@ -23,7 +23,7 @@
 
 
 
-            <v-card-title align="center">Iniciar sesion</v-card-title>
+            <v-card-title align="center">Login</v-card-title>
 
             <v-text-field
                 v-model="state.username"
@@ -54,7 +54,7 @@
                   text
                   @click="reserve"
               >
-                Iniciar
+                Login
               </v-btn></router-link>
 
               <router-link :to="{name:'home'}">
@@ -63,7 +63,7 @@
                   text
                   @click="regresar"
               >
-                Regresar
+                Return
               </v-btn></router-link>
             </v-card-actions>
           </v-card>
