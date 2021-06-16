@@ -48,7 +48,7 @@
             ></v-text-field>
 
             <v-card-actions>
-              <router-link :to="{name: 'Main'}">
+              <router-link :to="{name: 'main'}">
               <v-btn
                   color="primary lighten-2"
                   text
@@ -57,7 +57,7 @@
                 Iniciar
               </v-btn></router-link>
 
-              <router-link :to="{name:'Home'}">
+              <router-link :to="{name:'home'}">
               <v-btn
                   color="primary lighten-2"
                   text

@@ -68,7 +68,7 @@
           <v-card-actions>
             <router-link
               style="text-decoration: none; color: inherit;"
-              :to="{ name: 'Main' }"
+              :to="{ name: 'main' }"
             >
               <v-btn
                 color="primary lighten-2"

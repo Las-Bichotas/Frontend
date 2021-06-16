@@ -32,12 +32,12 @@
               language.
             </p>
             <div>
-              <router-link :to="{ name: 'Login' }">
+              <router-link :to="{ name: 'login' }">
                 <v-btn block large color="primary" elevation="6" class="mb-5"
                   >Login</v-btn
                 ></router-link
               >
-              <router-link :to="{ name: 'Register' }">
+              <router-link :to="{ name: 'register' }">
                 <v-btn block large elevation="6" outlined>
                   Register</v-btn
                 ></router-link

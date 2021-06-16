@@ -14,11 +14,11 @@
               Have a conversation with our native tutors on the topic of your choice.
             </p>
             <div>
-              <router-link :to="{name: 'Login'}">
+              <router-link :to="{name: 'login'}">
                 <v-btn large color="primary" elevation="3" class="mr-2">
                   Login</v-btn
                 > </router-link>
-              <router-link :to="{name: 'Register'}">
+              <router-link :to="{name: 'register'}">
                 <v-btn large elevation="3"> Register</v-btn> </router-link>
             </div>
           </div>

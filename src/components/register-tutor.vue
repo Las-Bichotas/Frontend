@@ -104,7 +104,7 @@
           </v-col>
         </v-row>
         <v-row>
-          <router-link :to="{name: 'Main'}">
+          <router-link :to="{name: 'main'}">
 
             <v-btn
                 color="primary"
