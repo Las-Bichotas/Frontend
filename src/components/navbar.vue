@@ -7,7 +7,7 @@
       scroll-target="#scrolling-techniques-7"
     >
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <router-link :to="{ name: 'Home' }">
+      <router-link :to="{ name: 'home' }">
         <v-toolbar-title class="homeBtn"
           >ILanguage</v-toolbar-title
         ></router-link
@@ -67,14 +67,15 @@ export default {
       {
         icon: "mdi-account-tie",
         text: "Profile",
-        route: "/user/profile/:userId",
+        route: "profile",
       },
+      { icon: "mdi-account-circle", text: "sessions", route: "user" },
       { icon: "mdi-account-circle", text: "Login", route: "login" },
       { icon: "mdi-cloud", text: "Register", route: "register" },
     ],
     navhome: [
-      { text: "Login", route: "Login" },
-      { text: "Register", route: "Register" },
+      { text: "Login", route: "login" },
+      { text: "Register", route: "register" },
     ],
     group: null,
   }),
