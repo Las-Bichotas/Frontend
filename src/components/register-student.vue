@@ -7,7 +7,7 @@
           shaped
           class="mainCard"
       >
-        <v-card-title>Crear una nueva cuenta de ILanguage</v-card-title>
+        <v-card-title>Create a new ILanguage account</v-card-title>
         <br>
         <v-divider></v-divider>
         <br>
@@ -96,7 +96,7 @@
                 rounded
                 class="btnCrearCuenta"
                 v-on:click="createNewAccount"
-            >Crear cuenta
+            >CREATE ACCOUNT
             </v-btn>
           </router-link>
         </v-row>

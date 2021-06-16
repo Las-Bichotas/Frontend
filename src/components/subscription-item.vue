@@ -59,9 +59,10 @@
               active-class="primary accent-4 white--text"
               column
             >
-              <v-chip>Antes: {{ subscription.price + 9.99 }} $</v-chip>
+              <v-chip>Before: {{ subscription.price + 9.99 }} $</v-chip>
 
-              <v-chip>Ahora: {{ subscription.price }} $</v-chip>
+              <v-chip>Now: {{ subscription.price }} $</v-chip>
+
             </v-chip-group>
           </v-card-text>
 
@@ -76,7 +77,7 @@
                 @click="reserve"
                 class="btnSeleccionar"
               >
-                Seleccionar
+                Select
               </v-btn></router-link
             >
           </v-card-actions>
@@ -109,19 +110,19 @@ export default {
         { place: "../assets/idiomas3.jpg" },
       ],
       benefits: [
-        { id: 0, benefitDescription: "Cancela en cualquier momento" },
+        { id: 0, benefitDescription: "Cancel at any time" },
         {
           id: 1,
           benefitDescription:
-            "Aceptamos como metodo de pago todas tus tarjetas",
+            "We accept as payment method all your credit cards.",
         },
-        { id: 2, benefitDescription: "Sin comisiones ni moras" },
-        { id: 3, benefitDescription: "Practica desde tu celular o ordenador" },
+        { id: 2, benefitDescription: "No commissions or late payments" },
+        { id: 3, benefitDescription: "Practice from your cell phone or computer" },
       ],
       slogan: [
-        { id: 0, benefitDescription: "Aprende ya!" },
-        { id: 1, benefitDescription: "El mundo en tus manos" },
-        { id: 2, benefitDescription: "No excusas!" },
+        { id: 0, benefitDescription: "Learn now!!" },
+        { id: 1, benefitDescription: "The world in your hands" },
+        { id: 2, benefitDescription: "No excuses!" },
       ],
     });
 

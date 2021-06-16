@@ -22,7 +22,7 @@
             </v-chip-group>
           </v-card-text>
           <v-card-actions>
-            <v-btn>CANCELAR</v-btn>
+            <v-btn>CANCEL</v-btn>
 
             <v-dialog v-model="dialog" width="700">
               <template v-slot:activator="{ on, attrs }">
