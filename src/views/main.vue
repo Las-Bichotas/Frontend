@@ -14,7 +14,6 @@ import session from '../components/session.vue';
 export default {
   components: { session },
   name: "Main",
-
   setup() {
     const axios = require("axios");
     const state = reactive({

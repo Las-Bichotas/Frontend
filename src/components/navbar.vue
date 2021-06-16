@@ -65,6 +65,7 @@
 export default {
   name: "navbar",
   data: () => ({
+    show: false,
     drawer: false,
     navidrahome: [
       {
