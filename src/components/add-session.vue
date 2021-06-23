@@ -105,13 +105,12 @@ export default {
 
     function saveSession(){
         axios.post("https://ilenguageapi.azurewebsites.net/api/sessions",{
-            id = 4,
-            startAt = state.startsAt,
-            endsAt = state.endsAt,
-            link = "www.zoom.com",
-            state = state.state,
-            topic = state.topic,
-            information = state.information
+            startAt : state.startsAt,
+            endsAt : state.endsAt,
+            link : "www.zoom.com",
+            state : state.state,
+            topic : state.topic,
+            information : state.information
             })
             .then(function(response){
                 console.log(response)
