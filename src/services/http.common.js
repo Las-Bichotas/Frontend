@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-export default {
+export default axios.create({
     baseURL: 'https://ilenguageapi.azurewebsites.net',
     headers: { 'Content-type': 'application/json' }
-};
+});
