@@ -49,6 +49,27 @@
         ></v-col>
 
       </v-row>
+      <v-btn
+          block
+          elevation="14"
+          rounded
+          text
+          class="btnPagar"
+      >Pagar</v-btn>
+
+      <router-link
+          style="text-decoration: none; color: inherit;"
+          :to="{ name: 'home' }"
+
+      >
+        <br>
+      <v-btn
+          block
+          elevation="14"
+          rounded
+          text class="btnCancelar"
+      >Cancelar</v-btn></router-link>
+
     </v-card>
   </v-app>
 </template>
@@ -102,6 +123,17 @@ margin-top: 10% !important;
   margin-right: 20% !important;
   margin-top: 5%;
   padding-bottom: 15px !important;
+}
+.btnCancelar{
+  background-color: red !important;
+  margin-bottom: 5px !important;
+
+}
+
+.btnPagar{
+  background-color: #42b983;
+
+  max-width: 80% !important;
 }
 
 
