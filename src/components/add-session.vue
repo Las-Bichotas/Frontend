@@ -72,68 +72,58 @@ Vue.use(VueCompositionAPI);
 import { reactive, onMounted } from "@vue/composition-api";
 
 export default {
-    Name: "Add-session",
+  Name: "Add-session",
 
-    setup(){
+  setup() {
+    const axios = require("axios");
+    const state = reactive({
+      sessions: [],
+      isTutor: true,
+      startsAt: Date,
+      endsAt: Date,
+      state: "",
+      topics: [],
+      topic: null,
+      information: "",
+      errorMessages: "",
+      formHasErrors: false,
+    });
 
-        const axios = require("axios");
-        const state = reactive({
-            sessions:[],
-            isTutor: true,
-            startsAt: Date,
-            endsAt: Date,
-            state: '',
-            topics: [],
-            topic: null,
-            information:'',
-            errorMessages: '',
-            formHasErrors: false,
-        })
-
-    function loadTopics(){
-        axios.get("https://ilenguageapi.azurewebsites.net/api/topics")
-        .then(function (response){
-            for (let i = 0; i < response.data.length; i++) {
-                state.topics.push(response.data[i]);
-            }
-            console.log(state.topics);
-        })
-        .catch(err => console.log(err))
-
+    async function loadTopics() {
+      try {
+        const response = await axios.get("https://ilenguageapi.azurewebsites.net/api/topics");
+        console.log(response);
+      } catch (error) {
+        console.error(error);
+      }
     }
 
-
-
-
-    function saveSession(){
-        axios.post("https://ilenguageapi.azurewebsites.net/api/sessions",{
-            startAt : state.startsAt,
-            endsAt : state.endsAt,
-            link : "www.zoom.com",
-            state : state.state,
-            topic : state.topic,
-            information : state.information
-            })
-            .then(function(response){
-                console.log(response)
-            })
-            .catch(err => console.log(err))
+    function saveSession() {
+      axios
+        .post("https://ilenguageapi.azurewebsites.net/api/sessions", {
+          startAt: state.startsAt,
+          endsAt: state.endsAt,
+          link: "www.zoom.com",
+          state: state.state,
+          topic: state.topic,
+          information: state.information,
+        })
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch((err) => console.log(err));
     }
-
 
     onMounted(() => {
-        loadTopics();
-    })
+      loadTopics();
+    });
 
-    return{
-        state,
-        saveSession
-    }
-
-    }
-
-
-}
+    return {
+      state,
+      saveSession,
+    };
+  },
+};
 </script>
 
 <style></style>
