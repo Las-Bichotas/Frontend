@@ -6,6 +6,7 @@ import Register from "@/views/register.vue";
 import Main from "@/views/main.vue";
 import Subscriptions from "@/views/subscription.vue";
 import profile from  "@/views/profile.vue";
+import Pay from  "@/views/payment.vue";
 
 Vue.use(VueRouter)
 
@@ -55,7 +56,12 @@ const routes = [
     path: '/profile',
     name:'profile',
     component: profile 
-  }
+  },
+  {
+    path: '/pay',
+    name:'pay',
+    component: Pay
+  },
 
 ]
 
