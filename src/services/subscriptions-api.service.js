@@ -2,10 +2,8 @@ import http from './http.common';
 
 class SubscriptionsApiService {
     getAll() {
-        return http.get('/api/subscriptions');
+        return http.get('/subscription');
     }
-
-
 }
 
 export default new SubscriptionsApiService();
