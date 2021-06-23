@@ -6,8 +6,8 @@
           <v-text-field
             ref="information"
             v-model="state.information"
-            :rules="[() => !!information || 'This field is required']"
-            :error-messages="errorMessages"
+            :rules="[() => !!state.information || 'This field is required']"
+            :error-messages="state.errorMessages"
             label="Information about the session"
             placeholder="Information"
             required
@@ -16,9 +16,9 @@
             ref="state"
             v-model="state.state"
             :rules="[
-              () => !!state || 'This field is required',
+              () => !!state.state || 'This field is required',
               () =>
-                (!!state && state.length <= 25) ||
+                (!!state.state && state.state.length <= 25) ||
                 'State must be less than 25 characters',
               addressCheck,
             ]"
@@ -31,7 +31,7 @@
           <v-autocomplete
             ref="topic"
             v-model="state.topic"
-            :rules="[() => !!topic || 'This field is required']"
+            :rules="[() => !!state.topic || 'This field is required']"
             :items="state.topics"
             label="Topic"
             placeholder="Select..."
@@ -43,7 +43,7 @@
           <v-btn text> Cancel </v-btn>
           <v-spacer></v-spacer>
           <v-slide-x-reverse-transition>
-            <v-tooltip v-if="formHasErrors" left>
+            <v-tooltip v-if="state.formHasErrors" left>
               <template v-slot:activator="{ on, attrs }">
                 <v-btn
                   icon
@@ -85,7 +85,9 @@ export default {
             state: '',
             topics: [],
             topic: null,
-            information:''
+            information:'',
+            errorMessages: '',
+            formHasErrors: false,
         })
 
     function loadTopics(){
