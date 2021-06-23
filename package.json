@@ -12,7 +12,8 @@
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
-    "vue-router": "^3.2.0",
+    "vue-ccard": "^1.0.6",
+    "vue-router": "^3.5.2",
     "vuetify": "^2.4.0"
   },
   "devDependencies": {
@@ -23,6 +24,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "jw-vue-pagination": "^1.0.3",
     "sass": "~1.32.0",
     "sass-loader": "^10.0.0",
     "vue-cli-plugin-vuetify": "~2.4.1",

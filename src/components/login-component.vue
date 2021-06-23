@@ -48,11 +48,11 @@
             ></v-text-field>
 
             <v-card-actions>
-              <router-link :to="{name: 'main'}">
+              <router-link :to="{name:'main'}">
               <v-btn
                   color="primary lighten-2"
                   text
-                  @click="reserve"
+                  @click="ingresar"
               >
                 Login
               </v-btn></router-link>
@@ -79,13 +79,15 @@
 import Vue from 'vue'
 import VueCompositionAPI from '@vue/composition-api'
 Vue.use(VueCompositionAPI)
-import { reactive, computed } from '@vue/composition-api'
+import { reactive, computed, onMounted } from '@vue/composition-api'
+
 
 export default {
   name: "login-component",
 
   setup(){
-    //const axios = require('axios');
+    const axios = require('axios');
+
     //DATA
     const state = reactive({
       username : '',
@@ -104,14 +106,28 @@ export default {
     //COMPUTED
     const nameMaxLengthCount = computed(()=>state.username.length)
 
-    /*function getUsers(){
+    onMounted(()=>{
+      getUsers();
+    })
+
+    function getUsers(){
       axios.get('https://60c2e09f917002001739da47.mockapi.io/user')
       .then(function(response){
-         var arr = response.data;
-            for (let i=0; i< arr.length;i++){
-              if(arr[i].username == state.username )
-            }
+        for (let i=0;i<response.data.length;i++){
+          state.users.push(response.data[i]);
+        }
       })
+    }
+    /*function ingresar(){
+      for (let i = 0; i< state.users.length; i++){
+        if(state.users.username === state.username && state.users.password === state.password){
+          console.log("user is in");
+          console.log(state.users[i]);
+        }
+
+      }
+
+
     }*/
 
 
