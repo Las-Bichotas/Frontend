@@ -106,6 +106,8 @@
 </template>
 
 <script>
+import UserApiService from '../services/users-api.service'
+
 import Vue from 'vue'
 import VueCompositionAPI from '@vue/composition-api'
 
@@ -138,7 +140,7 @@ export default {
       ]
     })
 
-    function createNewAccount() {
+   /* function createNewAccount() {
       axios.post('https://60c2e09f917002001739da47.mockapi.io/user', {
         name: state.newName,
         lastname: state.newLastName,
@@ -149,9 +151,24 @@ export default {
             console.log(response)
             /*  if(response.status === 201){
                 this.$router.push('/')
+              }
+          })
+          .catch(err => console.log(err))
+    }*/
+
+    function createNewAccount(){
+      UserApiService.create({name: state.newName,
+        lastname: state.newLastName,
+        description: state.newDescription,
+        email: state.newEmail}, 1)
+        .then(function (response) {
+            console.log(response)
+            /*  if(response.status === 201){
+                this.$router.push('/')
               }*/
           })
           .catch(err => console.log(err))
+        
     }
 
 
