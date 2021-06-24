@@ -88,6 +88,8 @@
 </template>
 
 <script>
+import subscriptionAPI from "../services/subscriptions-api.service"
+
 import Vue from "vue";
 import VueCompositionAPI from "@vue/composition-api";
 
@@ -97,7 +99,6 @@ import { reactive, onMounted } from "@vue/composition-api";
 export default {
   name: "subscription-item",
   setup() {
-    const axios = require("axios");
 
     const state = reactive({
       subscriptions: [],
@@ -135,11 +136,10 @@ export default {
       setTimeout(() => (this.loading = false), 2000);
     }
 
-    function loadSubscriptions() {
-      axios
-        .get("https://60c2e09f917002001739da47.mockapi.io/subscription")
-        //axios.get('https://localhost:44341/api/subscriptions')
-        .then(function(response) {
+
+    function loadSubscriptions(){
+      subscriptionAPI.getAll()
+      .then(function(response) {
           for (let i = 0; i < response.data.length; i++) {
             state.subscriptions.push(response.data[i]);
           }
@@ -147,6 +147,7 @@ export default {
           console.log(state.subscriptions);
         })
         .catch((err) => console.log(err));
+
     }
 
     return {
