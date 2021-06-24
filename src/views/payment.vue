@@ -32,13 +32,13 @@
             type="text"
             v-model="state.cc.holder"
             id="holder"
-            class="txtcard"
+            class="text"
           ></v-text-field
         ></v-col>
         <v-col cols="12" md="6">
           <v-text-field
             label="Expiration date"
-            type="text"
+            type="month"
             v-model="state.cc.exp"
             id="exp"
             class="txtcard"
@@ -61,10 +61,7 @@
       </v-row>
       <v-row>
 <v-col cols="12" md="6">
-         <router-link
-          style="text-decoration: none; color: inherit;"
-          :to="{ name: 'home' }"
-        >
+        
         <v-btn
           color="primary"
           elevation="24"
@@ -72,9 +69,10 @@
           raised
           rounded
           class="btnPagar"
+         @click="makePayment"
           >Pagar</v-btn
         >
-         </router-link>
+        
 </v-col>
 <v-col cols="12" md="6">
         <router-link
@@ -93,6 +91,9 @@
 </template>
 
 <script>
+import moment from 'moment'
+import router from "../router/index"
+import PayApiService from "../services/pay-api.service"
 import VueCCard from "vue-ccard";
 import Vue from "vue";
 import VueCompositionAPI from "@vue/composition-api";
@@ -104,19 +105,45 @@ export default {
   name: "payment",
   components: { VueCCard },
   setup() {
+
+
+    async function makePayment(){
+      state.month = moment(String(state.cc.exp)).format('MM');
+      state.year =moment(String(state.cc.exp)).format('YYYY');
+
+      await PayApiService.pay({
+        cardNumber: state.cc.number,
+        month: state.month,
+        year: state.year,
+        cvc: state.cc.cvc,
+        value: 50
+      })
+      .then(function (response){
+        console.log(response);
+        if(response.status){
+        router.push('/user');
+        }
+      })
+      .catch(err => console.log(err))
+
+    }
+
     const state = reactive({
       valid: false,
+      month:Date,
+      year:'',
       isTypingCvc: false,
       cc: {
         number: "",
         holder: "",
-        exp: "",
+        exp: Date,
         cvc: "",
       },
     });
 
     return {
       state,
+      makePayment
     };
   },
 };
