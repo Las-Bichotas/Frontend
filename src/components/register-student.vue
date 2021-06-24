@@ -118,7 +118,7 @@ import {reactive} from '@vue/composition-api'
 export default {
   name: "register-student",
   setup() {
-    const axios = require('axios');
+    //const axios = require('axios');
 
     const state = reactive({
       newName: '',

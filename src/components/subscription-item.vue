@@ -69,7 +69,7 @@
           <v-card-actions>
             <router-link
               style="text-decoration: none; color: inherit;"
-              :to="{ name: 'main' }"
+              :to="{ name: 'pay' }"
             >
               <v-btn
                 color="primary lighten-2"
