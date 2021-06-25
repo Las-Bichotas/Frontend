@@ -66,6 +66,8 @@
 </template>
 
 <script>
+import TopicApiService from "../services/topics-api.service"
+import SessionApiService from "../services/sessions-api.service"
 import Vue from "vue";
 import VueCompositionAPI from "@vue/composition-api";
 Vue.use(VueCompositionAPI);
@@ -75,7 +77,6 @@ export default {
   Name: "Add-session",
 
   setup() {
-    const axios = require("axios");
     const state = reactive({
       sessions: [],
       isTutor: true,
@@ -89,18 +90,19 @@ export default {
       formHasErrors: false,
     });
 
-    async function loadTopics() {
-      try {
-        const response = await axios.get("https://ilenguageapi.azurewebsites.net/api/topics");
-        console.log(response);
-      } catch (error) {
-        console.error(error);
-      }
+    function loadTopics() {
+      TopicApiService.getAll()
+      .then(function(response) {
+        for(let i=0; i<response.data.length; i++) {
+          state.topics.push(response.data[i]);
+        }
+      })
+      .catch((err) => console.log(err));
+
     }
 
     function saveSession() {
-      axios
-        .post("https://ilenguageapi.azurewebsites.net/api/sessions", {
+      SessionApiService.create({
           startAt: state.startsAt,
           endsAt: state.endsAt,
           link: "www.zoom.com",
@@ -113,6 +115,9 @@ export default {
         })
         .catch((err) => console.log(err));
     }
+
+
+
 
     onMounted(() => {
       loadTopics();
