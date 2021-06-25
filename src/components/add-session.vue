@@ -64,9 +64,10 @@
 </template>
 
 <script>
+import moment from 'moment'
 import DatetimePicker from "vuetify-datetime-picker";
 import TopicApiService from "../services/topics-api.service";
-//import SessionApiService from "../services/sessions-api.service";
+import SessionApiService from "../services/sessions-api.service";
 import Vue from "vue";
 import VueCompositionAPI from "@vue/composition-api";
 Vue.use(VueCompositionAPI);
@@ -102,7 +103,7 @@ export default {
         .catch((err) => console.log(err));
     }
 
-    function saveSession() {/*
+    function saveSession() {
       SessionApiService.create({
         startAt: state.startsAt,
         endsAt: state.endsAt,
@@ -114,8 +115,10 @@ export default {
         .then(function(response) {
           console.log(response);
         })
-        .catch((err) => console.log(err));*/
+        .catch((err) => console.log(err));
         console.log(state.datetime);
+        var a = moment(String(state.datetime)).format('MMMM Do YYYY, h:mm:ss a');
+        console.log(a);
     }
 
     onMounted(() => {
