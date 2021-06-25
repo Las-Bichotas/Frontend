@@ -16,11 +16,7 @@
             ref="state"
             v-model="state.state"
             :rules="[
-              () => !!state.state || 'This field is required',
-              () =>
-                (!!state.state && state.state.length <= 25) ||
-                'State must be less than 25 characters',
-              addressCheck,
+              () => !!state.state || 'This field is required'
             ]"
             label="State Line"
             placeholder="State"
@@ -58,7 +54,7 @@
               <span>Refresh form</span>
             </v-tooltip>
           </v-slide-x-reverse-transition>
-          <v-btn color="primary" text @click="submit"> Save </v-btn>
+          <v-btn color="primary" text @click="saveSession"> Save </v-btn>
         </v-card-actions>
       </v-card>
     </v-col>
@@ -94,7 +90,8 @@ export default {
       TopicApiService.getAll()
       .then(function(response) {
         for(let i=0; i<response.data.length; i++) {
-          state.topics.push(response.data[i]);
+          state.topics.push(response.data[i].name);
+          console.log(response.data[i].name);
         }
       })
       .catch((err) => console.log(err));
