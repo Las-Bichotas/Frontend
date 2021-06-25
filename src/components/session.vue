@@ -20,6 +20,10 @@
             {{ session.startAt }} - {{ session.endsAt }}
           </v-card-subtitle>
           <v-divider></v-divider>
+            <v-card-subtitle>
+            Session starts in: {{state.timeFromNow}}
+          </v-card-subtitle>
+          <v-divider></v-divider>
 
           <v-card-text>
             {{ session.information }}
@@ -46,6 +50,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 import Vue from "vue";
 import VueRouter from "vue-router";
 import SessionApiService from "../services/sessions-api.service";
@@ -54,7 +59,7 @@ Vue.use(VueRouter);
 import VueCompositionAPI from "@vue/composition-api";
 
 Vue.use(VueCompositionAPI);
-import { reactive, onMounted } from "@vue/composition-api";
+import { reactive, onMounted, computed } from "@vue/composition-api";
 
 import JwPagination from "jw-vue-pagination";
 Vue.component("jw-pagination", JwPagination);
@@ -74,6 +79,7 @@ export default {
         "https://www.caracteristicas.co/wp-content/uploads/2018/10/matematicas-e1581735212109.jpg",
         "https://sites.google.com/site/divierteteconlafisica/_/rsrc/1427808642745/home/fisica_0.jpg",
       ],
+      timeFromNow: null
     });
 
     onMounted(() => {
@@ -96,6 +102,10 @@ export default {
     function onChangePage(pageOfItems) {
       state.pageOfItems = pageOfItems;
     }
+
+    computed(() => {
+      state.timeFromNow = moment().endOf('hours').fromNow();
+    })
 
     return {
       state,
