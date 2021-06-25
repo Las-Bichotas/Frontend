@@ -107,11 +107,11 @@ export default {
   setup() {
 
 
-    async function makePayment(){
+     function makePayment(){
       state.month = moment(String(state.cc.exp)).format('MM');
       state.year =moment(String(state.cc.exp)).format('YYYY');
 
-      await PayApiService.pay({
+       PayApiService.pay({
         cardNumber: state.cc.number,
         month: state.month,
         year: state.year,

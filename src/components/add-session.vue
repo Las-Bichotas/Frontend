@@ -15,9 +15,7 @@
           <v-text-field
             ref="state"
             v-model="state.state"
-            :rules="[
-              () => !!state.state || 'This field is required'
-            ]"
+            :rules="[() => !!state.state || 'This field is required']"
             label="State Line"
             placeholder="State"
             counter="25"
@@ -33,6 +31,10 @@
             placeholder="Select..."
             required
           ></v-autocomplete>
+          <v-row justify="center">
+            <v-datetime-picker label="Select Datetime" v-model="state.datetime">
+            </v-datetime-picker>
+          </v-row>
         </v-card-text>
         <v-divider class="mt-12"></v-divider>
         <v-card-actions>
@@ -62,16 +64,18 @@
 </template>
 
 <script>
-import TopicApiService from "../services/topics-api.service"
-import SessionApiService from "../services/sessions-api.service"
+import DatetimePicker from "vuetify-datetime-picker";
+import TopicApiService from "../services/topics-api.service";
+//import SessionApiService from "../services/sessions-api.service";
 import Vue from "vue";
 import VueCompositionAPI from "@vue/composition-api";
 Vue.use(VueCompositionAPI);
+Vue.use(DatetimePicker);
 import { reactive, onMounted } from "@vue/composition-api";
 
 export default {
   Name: "Add-session",
-
+  components: {},
   setup() {
     const state = reactive({
       sessions: [],
@@ -84,37 +88,35 @@ export default {
       information: "",
       errorMessages: "",
       formHasErrors: false,
+      datetime: ''
     });
 
     function loadTopics() {
       TopicApiService.getAll()
-      .then(function(response) {
-        for(let i=0; i<response.data.length; i++) {
-          state.topics.push(response.data[i].name);
-          console.log(response.data[i].name);
-        }
-      })
-      .catch((err) => console.log(err));
-
-    }
-
-    function saveSession() {
-      SessionApiService.create({
-          startAt: state.startsAt,
-          endsAt: state.endsAt,
-          link: "www.zoom.com",
-          state: state.state,
-          topic: state.topic,
-          information: state.information,
-        })
         .then(function(response) {
-          console.log(response);
+          for (let i = 0; i < response.data.length; i++) {
+            state.topics.push(response.data[i].name);
+            console.log(response.data[i].name);
+          }
         })
         .catch((err) => console.log(err));
     }
 
-
-
+    function saveSession() {/*
+      SessionApiService.create({
+        startAt: state.startsAt,
+        endsAt: state.endsAt,
+        link: "www.zoom.com",
+        state: state.state,
+        topic: state.topic,
+        information: state.information,
+      })
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch((err) => console.log(err));*/
+        console.log(state.datetime);
+    }
 
     onMounted(() => {
       loadTopics();
@@ -128,4 +130,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.italic {
+  font-style: italic;
+}
+.custom {
+  font-weight: bold !important;
+}
+</style>
