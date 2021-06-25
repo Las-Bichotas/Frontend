@@ -1,34 +1,40 @@
 <template>
   <v-app>
     <session></session>
+    
   </v-app>
 </template>
 
 <script>
+//import router from "../router/index";
+import SessionApiService from "../services/sessions-api.service"
 import Vue from "vue";
 import VueCompositionAPI from "@vue/composition-api";
 Vue.use(VueCompositionAPI);
-import { reactive, onMounted } from "@vue/composition-api";
+import { reactive, onMounted/*, computed*/ } from "@vue/composition-api";
 import session from '../components/session.vue';
 
 export default {
   components: { session },
   name: "Main",
   setup() {
-    const axios = require("axios");
+   // const userId = computed(() =>router.params.userId);
+
     const state = reactive({
       users: [],
       user: Object,
     });
 
     function loadUsers() {
-      axios
-        .get("https://60c2e09f917002001739da47.mockapi.io/user")
-        .then(function(response) {
+      SessionApiService.getAll()
+      .then(function(response) {
           for (let i = 0; i < response.data.length; i++) {
             state.users.push(response.data[i]);
           }
-        });
+        })
+        .catch(err => console.log(err));
+
+        
     }
 
     onMounted(() => {
@@ -37,11 +43,11 @@ export default {
 
     return {
       state,
-      loadUsers,
+      loadUsers
+      //userId
     };
   },
 };
 </script>
 
 <style scoped></style>
-
