@@ -15,13 +15,7 @@
           <v-text-field
             ref="state"
             v-model="state.state"
-            :rules="[
-              () => !!state.state || 'This field is required',
-              () =>
-                (!!state.state && state.state.length <= 25) ||
-                'State must be less than 25 characters',
-              addressCheck,
-            ]"
+            :rules="[() => !!state.state || 'This field is required']"
             label="State Line"
             placeholder="State"
             counter="25"
@@ -37,6 +31,10 @@
             placeholder="Select..."
             required
           ></v-autocomplete>
+          <v-row justify="center">
+            <v-datetime-picker label="Select Datetime" v-model="state.datetime">
+            </v-datetime-picker>
+          </v-row>
         </v-card-text>
         <v-divider class="mt-12"></v-divider>
         <v-card-actions>
@@ -58,7 +56,7 @@
               <span>Refresh form</span>
             </v-tooltip>
           </v-slide-x-reverse-transition>
-          <v-btn color="primary" text @click="submit"> Save </v-btn>
+          <v-btn color="primary" text @click="saveSession"> Save </v-btn>
         </v-card-actions>
       </v-card>
     </v-col>
@@ -66,16 +64,20 @@
 </template>
 
 <script>
+import moment from 'moment'
+import DatetimePicker from "vuetify-datetime-picker";
+import TopicApiService from "../services/topics-api.service";
+import SessionApiService from "../services/sessions-api.service";
 import Vue from "vue";
 import VueCompositionAPI from "@vue/composition-api";
 Vue.use(VueCompositionAPI);
+Vue.use(DatetimePicker);
 import { reactive, onMounted } from "@vue/composition-api";
 
 export default {
   Name: "Add-session",
-
+  components: {},
   setup() {
-    const axios = require("axios");
     const state = reactive({
       sessions: [],
       isTutor: true,
@@ -87,31 +89,36 @@ export default {
       information: "",
       errorMessages: "",
       formHasErrors: false,
+      datetime: ''
     });
 
-    async function loadTopics() {
-      try {
-        const response = await axios.get("https://ilenguageapi.azurewebsites.net/api/topics");
-        console.log(response);
-      } catch (error) {
-        console.error(error);
-      }
+    function loadTopics() {
+      TopicApiService.getAll()
+        .then(function(response) {
+          for (let i = 0; i < response.data.length; i++) {
+            state.topics.push(response.data[i].name);
+            console.log(response.data[i].name);
+          }
+        })
+        .catch((err) => console.log(err));
     }
 
     function saveSession() {
-      axios
-        .post("https://ilenguageapi.azurewebsites.net/api/sessions", {
-          startAt: state.startsAt,
-          endsAt: state.endsAt,
-          link: "www.zoom.com",
-          state: state.state,
-          topic: state.topic,
-          information: state.information,
-        })
+      SessionApiService.create({
+        startAt: state.startsAt,
+        endsAt: state.endsAt,
+        link: "www.zoom.com",
+        state: state.state,
+        topic: state.topic,
+        information: state.information,
+      })
         .then(function(response) {
           console.log(response);
         })
         .catch((err) => console.log(err));
+        console.log(state.datetime);
+        var a = moment(String(state.datetime)).format('MMMM Do YYYY, h:mm:ss a');
+        console.log(a);
     }
 
     onMounted(() => {
@@ -126,4 +133,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.italic {
+  font-style: italic;
+}
+.custom {
+  font-weight: bold !important;
+}
+</style>

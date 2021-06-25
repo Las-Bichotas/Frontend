@@ -2,8 +2,8 @@ import http from './http.common';
 
 class SubscriptionsApiService {
     getAll() {
-        //return http.get('/api/subscriptions'); 
-        return http.get('/subscription'); //mockito
+        return http.get('/api/subscriptions');
+        //return http.get('/subscription'); //mockito
     }
 
     create(data) {
