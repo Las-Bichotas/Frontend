@@ -4,9 +4,12 @@
 
 <script>
 import TutorComponent from "../components/tutor-component";
+
 export default {
   name: "tutor",
-  components: {TutorComponent}
+  components: {
+    TutorComponent
+  }
 }
 </script>
 
