@@ -11,77 +11,85 @@
                     alt="el profesor"
                 />
               </v-avatar>
-              <div class="justify-center align-center text-center">
-                <v-rating
-                    color="warning"
-                    half-increments
-                    hover
-                    length="5"
-                    size="25"
-                    value="4"
-                ></v-rating>
-              </div>
-
               <v-card-title>Full Name:Alvaro Miyagi</v-card-title>
               <v-card-title>Email:AMLO@gmail.com</v-card-title>
               <v-card-title>Description:Teacher of universal history in French</v-card-title>
-              <v-col class="justify-center align-center">
-                <div>
-                  <v-row>
-                    <v-col>
-                      1 Stars
-                      <v-progress-circular
-                          value="15"
-                          color="purple lighten-3"
-                          :size="50"
-                          :width="10"
-                      >{{ 10 }}
-                      </v-progress-circular>
-                    </v-col>
-                    <v-col>
-                      2 Stars
-                      <v-progress-circular
-                          value="25"
-                          color="blue lighten-3"
-                          :size="50"
-                          :width="10"
-                      >{{ 25 }}
-                      </v-progress-circular>
-                    </v-col>
-                    <v-col>
-                      3 Stars
-                      <v-progress-circular
-                          value="45"
-                          color="green lighten-1"
-                          :size="50"
-                          :width="10"
-                      >{{ 45 }}
-                      </v-progress-circular>
-                    </v-col>
-                    <v-col>
-                      4 Stars
-                      <v-progress-circular
-                          value="55"
-                          color="blue-grey darken-1"
-                          :size="50"
-                          :width="10"
-                      >{{ 55 }}
-                      </v-progress-circular>
-                    </v-col>
-                    <v-col>
-                      5 Stars
-                      <v-progress-circular
-                          value="75"
-                          color="amber"
-                          :size="50"
-                          :width="10"
-                      >{{ 75 }}
-                      </v-progress-circular>
-                    </v-col>
-                  </v-row>
-                </div>
-              </v-col>
+              <br>
+              <div>
+                <v-row>
+                  <v-col>
+                    <h1 class="xs10 float-lg-right">4.0 Stars</h1>
+                  </v-col>
+                  <v-col>
+                    <div class="float-left">
+                      <v-rating
+                          color="warning"
+                          half-increments
+                          hover
+                          length="5"
+                          size="25"
+                          value="4"
+                      ></v-rating>
+                    </div>
+                  </v-col>
+                </v-row>
+              </div>
+              <div>
+                <v-row class="align-center text-center justify-center">
+                  <v-col cols="1">
+                    1 Stars
+                    <v-progress-circular
+                        value="15"
+                        color="purple lighten-3"
+                        :size="50"
+                        :width="10"
+                    >{{ 10 }}
+                    </v-progress-circular>
+                  </v-col>
+                  <v-col cols="1">
+                    2 Stars
+                    <v-progress-circular
+                        value="25"
+                        color="blue lighten-3"
+                        :size="50"
+                        :width="10"
+                    >{{ 25 }}
+                    </v-progress-circular>
+                  </v-col>
+                  <v-col cols="1">
+                    3 Stars
+                    <v-progress-circular
+                        value="45"
+                        color="green lighten-1"
+                        :size="50"
+                        :width="10"
+                    >{{ 45 }}
+                    </v-progress-circular>
+                  </v-col>
+                  <v-col cols="1">
+                    4 Stars
+                    <v-progress-circular
+                        value="55"
+                        color="blue-grey darken-1"
+                        :size="50"
+                        :width="10"
+                    >{{ 55 }}
+                    </v-progress-circular>
+                  </v-col>
+                  <v-col cols="1">
+                    5 Stars
+                    <v-progress-circular
+                        value="75"
+                        color="amber"
+                        :size="50"
+                        :width="10"
+                    >{{ 75 }}
+                    </v-progress-circular>
+                  </v-col>
+                </v-row>
+              </div>
             </v-card-text>
+            <br>
             <div>
               <v-btn large color="primary" elevation="8" class="mr-2">Reserve</v-btn>
               <v-btn large elevation="8"> Edit</v-btn>
