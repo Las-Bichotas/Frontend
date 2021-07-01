@@ -1,6 +1,6 @@
 <template>
   <v-container elevation="5">
-    <v-card class="mx-auto" max-width="335" outlined>
+    <v-card class="mx-auto" max-width="235" outlined>
       <v-container>
         <v-row>
           <v-card-title class="text-h5">Student Ranking</v-card-title>

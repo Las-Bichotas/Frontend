@@ -1,8 +1,9 @@
 <template>
-  <v-app>
+  <div class="main">
+    <Drawer></Drawer>
     <session></session>
-    
-  </v-app>
+   
+  </div>
 </template>
 
 <script>
@@ -13,9 +14,11 @@ import VueCompositionAPI from "@vue/composition-api";
 Vue.use(VueCompositionAPI);
 import { reactive, onMounted/*, computed*/ } from "@vue/composition-api";
 import session from '../components/session.vue';
+import Drawer from "../components/drawer-main";
+
 
 export default {
-  components: { session },
+  components: { session , Drawer,},
   name: "Main",
   setup() {
    // const userId = computed(() =>router.params.userId);
