@@ -21,7 +21,7 @@
           </v-card-subtitle>
           <v-divider></v-divider>
             <v-card-subtitle>
-            Session starts in: {{state.timeFromNow}}
+            Session starts in: {{}}
           </v-card-subtitle>
           <v-divider></v-divider>
 
@@ -30,18 +30,13 @@
           </v-card-text>
 
           <v-card-actions>
-            <v-btn color="orange lighten-2" text class="btn-reservar">
+            <v-btn  color="orange lighten-2" text class="btn-reservar">
               Reservar
             </v-btn>
 
             <v-spacer></v-spacer>
 
-            <div class="card-footer pb-0 pt-3">
-              <jw-pagination
-                :items="session"
-                @changePage="onChangePage"
-              ></jw-pagination>
-            </div>
+
           </v-card-actions>
         </v-card>
       </v-container>
@@ -50,6 +45,7 @@
 </template>
 
 <script>
+import UserSessionApiService from "../services/user-session-api.service";
 import moment from 'moment'
 import Vue from "vue";
 import VueRouter from "vue-router";
@@ -62,6 +58,7 @@ Vue.use(VueCompositionAPI);
 import { reactive, onMounted, computed } from "@vue/composition-api";
 
 import JwPagination from "jw-vue-pagination";
+import router from "@/router";
 Vue.component("jw-pagination", JwPagination);
 
 export default {
@@ -71,6 +68,7 @@ export default {
 
     const state = reactive({
       sessions: [],
+      sessionId: Number,
       pageOfItems: [],
       imgs: [
         "https://m5s7j2f7.rocketcdn.me/wp-content/uploads/fly-images/8825/5-angular-vs_angularjs-vs-angular4-2136x0.jpg",
@@ -103,13 +101,30 @@ export default {
       state.pageOfItems = pageOfItems;
     }
 
-    computed(() => {
-      state.timeFromNow = moment().endOf('hours').fromNow();
+    computed((session) => {
+      //return moment().endOf('hours').fromNow();
+      state.timeFromNow= moment(session.startsAt).to(moment(session.endsAt))
     })
+    function makeSessionStateDisable(id, content){
+      SessionApiService.update(id, content)
+      .then(()=>{
+        router.push('/main');
+      })
+      .catch((err) => console.log(err));
+    }
+
+    function change(id) {
+      UserSessionApiService.assingSessionToUser(1, id)
+          .then(function (response) {
+            makeSessionStateDisable(id, response.data)
+          })
+          .catch((err) => console.log(err))
+    }
 
     return {
       state,
       onChangePage,
+      change
     };
   },
 };
