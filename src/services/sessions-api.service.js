@@ -4,7 +4,7 @@ import http from './http.common';
 class SessionApiService {
 
     getAll() {
-        return http.get('/session');
+        return http.get('/api/sessions');
     }
 
     get(id) {

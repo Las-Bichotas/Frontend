@@ -12,15 +12,7 @@
             placeholder="Information"
             required
           ></v-text-field>
-          <v-text-field
-            ref="state"
-            v-model="state.state"
-            :rules="[() => !!state.state || 'This field is required']"
-            label="State Line"
-            placeholder="State"
-            counter="25"
-            required
-          ></v-text-field>
+
 
           <v-autocomplete
             ref="topic"
@@ -31,10 +23,27 @@
             placeholder="Select..."
             required
           ></v-autocomplete>
+          <v-autocomplete
+              ref="topic"
+              v-model="state.language"
+              :rules="[() => !!state.topic || 'This field is required']"
+              :items="state.languages"
+              label="Language"
+              placeholder="Select..."
+              required
+          ></v-autocomplete>
           <v-row justify="center">
             <v-datetime-picker label="Select Datetime" v-model="state.datetime">
             </v-datetime-picker>
           </v-row>
+          <v-autocomplete
+              ref="topic"
+              v-model="state.hoursDuration"
+              :items="state.hoursDurations"
+              label="Duration in hours"
+              placeholder="Select..."
+              required
+          ></v-autocomplete>
         </v-card-text>
         <v-divider class="mt-12"></v-divider>
         <v-card-actions>
@@ -64,6 +73,7 @@
 </template>
 
 <script>
+import LanguageApiService from "../services/languages-api.service.js";
 import moment from 'moment'
 import DatetimePicker from "vuetify-datetime-picker";
 import TopicApiService from "../services/topics-api.service";
@@ -85,12 +95,26 @@ export default {
       endsAt: Date,
       state: "",
       topics: [],
+      languages:[],
       topic: null,
+      language: null,
       information: "",
       errorMessages: "",
       formHasErrors: false,
-      datetime: ''
+      datetime: '',
+      hoursDuration:Number,
+      hoursDurations: [1,2,3]
     });
+
+    function loadLanguages() {
+      LanguageApiService.getAll()
+      .then((ress)=>{
+        for(let i=0; i<ress.data.length; i++){
+          state.languages.push(ress.data[i])
+        }
+      })
+      .catch()
+    }
 
     function loadTopics() {
       TopicApiService.getAll()
@@ -104,10 +128,19 @@ export default {
     }
 
     function saveSession() {
+      state.endsAt = state.startsAt();
+      state.endsAt = moment().add(5,'h');
+      /*let a = new Date();
+      let b = new Date();
+      a= state.startsAt;
+      b= a;
+      b.setHours(b.getHours()+ state.hoursDuration());
+      state.endsAt = b;*/
+      console.log(state.endsAt);
       SessionApiService.create({
         startAt: state.startsAt,
         endsAt: state.endsAt,
-        link: "www.zoom.com",
+        link: `www.zoom.com/${state.topic}/${state.language}`,
         state: state.state,
         topic: state.topic,
         information: state.information,
@@ -123,6 +156,8 @@ export default {
 
     onMounted(() => {
       loadTopics();
+      loadLanguages();
+      state.state = "active";
     });
 
     return {
