@@ -7,18 +7,18 @@ class UsersApiService {
     }
 
     get(id) {
-        return http.get(`/api/user/${id}`);
+        return http.get(`/api/users/${id}`);
     }
 
     create(user, roleId) {
-        return http.post(`/api/user/${roleId}`, user);
+        return http.post(`/api/users/${roleId}`, user);
     }
     update(id, user) {
-        return http.put(`/api/user/${id}`, user);
+        return http.put(`/api/users/${id}`, user);
     }
 
     delete(id) {
-        return http.delete(`/api/user/${id}`);
+        return http.delete(`/api/users/${id}`);
     }
 
 }
