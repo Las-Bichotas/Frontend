@@ -1,36 +1,42 @@
 <template>
-  <v-card>
-    <v-card-title>
-      Tutors
-      <v-spacer></v-spacer>
-      <v-text-field
-          v-model="search"
-          append-icon="mdi-magnify"
-          label="Search"
-          single-line
-          hide-details
-      ></v-text-field>
-    </v-card-title>
-    <v-card-text>
-      <v-data-table :headers="headers"
-                    :items="displayTutors"
-                    :items-per-page="5"
-                    :search="search"
-                    class="elevation-1" ref="tutorialsTable">
-        <template>
-          <v-icon small class="mr-2" @click="navigateToProfileTutor()">mdi-pencil</v-icon>
-        </template>
-      </v-data-table>
-    </v-card-text>
-    <v-card-actions>
-      <v-btn small color="primary" @click="refreshList()">REFRESH</v-btn>
-    </v-card-actions>
-  </v-card>
+  <div>
+    <Drawer></Drawer>
+    <v-card>
+      <v-card-title>
+        Tutors
+        <v-spacer></v-spacer>
+        <v-text-field
+            v-model="search"
+            append-icon="mdi-magnify"
+            label="Search"
+            single-line
+            hide-details
+        ></v-text-field>
+      </v-card-title>
+      <v-card-text>
+        <v-data-table :headers="headers"
+                      :items="displayTutors"
+                      :items-per-page="5"
+                      :search="search"
+                      class="elevation-1" ref="tutorialsTable">
+          <template>
+            <v-icon small class="mr-2" @click="navigateToProfileTutor()">mdi-pencil</v-icon>
+          </template>
+        </v-data-table>
+      </v-card-text>
+      <v-card-actions>
+        <v-btn small color="primary" @click="refreshList()">REFRESH</v-btn>
+      </v-card-actions>
+    </v-card>
+  </div>
 </template>
 
 <script>
 import UserApiService from '../../services/users-api.service';
+import Drawer from "../home/drawer-main";
+
 export default {
+  components: { Drawer },
   name: "tutorials",
   data() {
     return {

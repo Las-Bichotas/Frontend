@@ -48,7 +48,7 @@ export default {
       items: [
         { title: 'Session', icon: 'mdi-home', route: "newsession" },
         { title: 'Profile', icon: 'mdi-account', route: "profile" },
-        { title: 'Search', icon: 'mdi-account-search' , route: "profile"},
+        { title: 'Search', icon: 'mdi-account-search' , route: "tutors"},
       ],
      
     }
