@@ -72,7 +72,7 @@ const routes = [{
     {
         path: '/tutors',
         name: 'tutors',
-        component: () => import('../components/tutors-component/tutors')
+        component: () => import('../components/tutors/tutors')
     },
 
 ]
