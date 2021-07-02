@@ -44,12 +44,12 @@ export default {
       dialog: false,
       dialogDelete: false,
       headers: [
-        {text: 'Tutor', value: 'tutor'},
+        {text: 'Tutor', value: 'user'},
         {text: 'Topic', value: 'topic'},
         {text: 'Language', value: 'language'},
         {text: 'Actions', value: 'actions', sortable: false}
       ],
-      tutors: [],
+      users: [],
       displayTutors: [],
       editedIndex: -1,
       editedItem: {
@@ -82,20 +82,24 @@ export default {
     retrieveTutors() {
       UserApiService.getAll()
           .then(response => {
-            this.tutors = response.data;
-            this.displayTutors = response.data.map(this.getDisplayTutor);
+            /*console.log(response);
+            this.users = response.data;
+            this.displayTutors = response.data.map(this.getDisplayTutor);*/
+            for (let i = 0; i < response.data.length; i++) {
+              this.users.push(response.data[i]);
+            }
           })
           .catch((e) => {
             console.log(e);
           });
     },
 
-    getDisplayTutor(tutor) {
-      console.log(tutor);
+    getDisplayTutor(user) {
+      console.log(user);
       return {
-        tutor: tutor.tutor,
-        topic: tutor.topic,
-        language: tutor.language,
+        users: user.name,
+        topic: user.topic,
+        language: user.language,
       };
 
     },
@@ -107,7 +111,7 @@ export default {
     editItem(item) {
       this.editedIndex = this.displayTutors.indexOf(item);
       console.log(item);
-      this.editedItem = this.tutors[this.editedIndex];
+      this.editedItem = this.users[this.editedIndex];
       this.dialog = true;
     },
 
@@ -125,32 +129,6 @@ export default {
         this.editedItem = Object.assign({}, this.defaultItem)
         this.editedIndex = -1
       })
-    },
-
-    save() {
-      if (this.editedIndex > -1) {
-        this.tutors[this.editedIndex] = this.editedItem;
-        this.displayTutors[this.editedIndex] = this.getDisplayTutor(this.tutors[this.editedIndex]);
-        UserApiService.update(this.editedItem.id, this.editedItem)
-            .then(() => {
-              this.refreshList();
-            })
-            .catch(e => {
-              console.log(e);
-            });
-
-      } else {
-        UserApiService.create(this.editedItem)
-            .then(response => {
-              let item = response.data;
-              this.tutors.push(item);
-              this.displayTutors.push(this.getDisplayTutor(item));
-            })
-            .catch(e => {
-              console.log(e);
-            })
-      }
-      this.close()
     },
 
     navigateToProfileTutor() {
