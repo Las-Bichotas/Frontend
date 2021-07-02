@@ -22,8 +22,10 @@
         </template>
       </v-data-table>
     </v-card-text>
+    <v-card-actions>
+      <v-btn small color="primary" @click="refreshList()">REFRESH</v-btn>
+    </v-card-actions>
   </v-card>
-
 </template>
 
 <script>
