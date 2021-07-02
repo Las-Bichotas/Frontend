@@ -3,10 +3,14 @@
 </template>
 
 <script>
+
 import TutorComponent from "../components/tutors/tutor-component";
+
 export default {
   name: "tutor",
-  components: {TutorComponent}
+  components: {
+    TutorComponent
+  }
 }
 </script>
 
