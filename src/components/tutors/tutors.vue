@@ -18,9 +18,9 @@
                       :items="displayTutors"
                       :items-per-page="5"
                       :search="search"
-                      class="elevation-1" ref="tutorialsTable">
-          <template>
-            <v-icon small class="mr-2" @click="navigateToProfileTutor()">mdi-pencil</v-icon>
+                      class="elevation-1" ref="tutorsTable">
+          <template v-slot:[`item.actions`]="{ item }">
+            <v-icon small class="mr-2" @click="navigateToProfileTutor(item)">mdi-checkbox-marked-circle-outline</v-icon>
           </template>
         </v-data-table>
       </v-card-text>
@@ -33,11 +33,13 @@
 
 <script>
 import UserApiService from '../../services/users-api.service';
+import TopicApiService from '../../services/topics-api.service';
+import LanguagesApiService from '../../services/languages-api.service';
 import Drawer from "../home/drawer-main";
 
 export default {
   components: { Drawer },
-  name: "tutorials",
+  name: "tutors",
   data() {
     return {
       search: '',
@@ -82,12 +84,29 @@ export default {
     retrieveTutors() {
       UserApiService.getAll()
           .then(response => {
-            /*console.log(response);
+            console.log(response);
             this.users = response.data;
-            this.displayTutors = response.data.map(this.getDisplayTutor);*/
-            for (let i = 0; i < response.data.length; i++) {
-              this.users.push(response.data[i]);
-            }
+            this.displayTutors = response.data.map(this.getDisplayTutor);
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+    },
+
+    getTopic(id) {
+      TopicApiService.get(id)
+          .then(response => {
+            return response.data;
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+    },
+
+    getLanguage(id) {
+      LanguagesApiService.get(id)
+          .then(response => {
+            return response.data;
           })
           .catch((e) => {
             console.log(e);
@@ -95,11 +114,10 @@ export default {
     },
 
     getDisplayTutor(user) {
-      console.log(user);
       return {
-        users: user.name,
-        topic: user.topic,
-        language: user.language,
+        user: user.name,
+        topic: this.getTopic(user.id),
+        language: this.getLanguage(user.id),
       };
 
     },
@@ -131,8 +149,9 @@ export default {
       })
     },
 
-    navigateToProfileTutor() {
-      this.$router.push({name: 'tutor-component'});
+    navigateToProfileTutor(item) {
+      this.$router.push({name: '/tutor-component'});
+      console.log(item);
     }
   },
   mounted() {
