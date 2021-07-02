@@ -46,7 +46,8 @@ export default {
     return {
       
       items: [
-        { title: 'Session', icon: 'mdi-home', route: "newsession" },
+        { title: 'Home', icon: 'mdi-home', route: "user" },
+        { title: 'Session', icon: 'mdi-account-tie', route: "newsession" },
         { title: 'Profile', icon: 'mdi-account', route: "profile" },
         { title: 'Search', icon: 'mdi-account-search' , route: "tutors"},
       ],

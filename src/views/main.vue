@@ -1,9 +1,9 @@
 <template>
-  <div class="main">
+  <v-app>
     <Drawer></Drawer>
     <session></session>
    
-  </div>
+  </v-app>
 </template>
 
 <script>

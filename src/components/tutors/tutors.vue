@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-app>
     <Drawer></Drawer>
     <v-card>
       <v-card-title>
@@ -28,7 +28,7 @@
         <v-btn small color="primary" @click="refreshList()">REFRESH</v-btn>
       </v-card-actions>
     </v-card>
-  </div>
+  </v-app>
 </template>
 
 <script>
