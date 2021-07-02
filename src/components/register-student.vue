@@ -113,6 +113,7 @@ import VueCompositionAPI from '@vue/composition-api'
 
 Vue.use(VueCompositionAPI)
 import {reactive} from '@vue/composition-api'
+import router from "../router";
 
 
 export default {
@@ -156,19 +157,35 @@ export default {
           .catch(err => console.log(err))
     }*/
 
+    /*function createNewAccount() {
+      UserApiService.create({
+        name: state.newName,
+        lastname: state.newLastName,
+        description: state.newDescription,
+        email: state.newEmail
+      }, 1)
+          .then(function (response) {
+            console.log(response)
+              if(response.status === 201){
+                this.$router.push('/')
+              }
+          })
+          .catch(err => console.log(err))
+    }*/
     function createNewAccount(){
       UserApiService.create({name: state.newName,
         lastname: state.newLastName,
+        password:"pepelucho",
         description: state.newDescription,
         email: state.newEmail}, 1)
-        .then(function (response) {
+          .then(function (response) {
             console.log(response)
-            /*  if(response.status === 201){
-                this.$router.push('/')
-              }*/
+            if(response.status === 200){
+              router.push('/user');
+            }
           })
           .catch(err => console.log(err))
-        
+
     }
 
 
