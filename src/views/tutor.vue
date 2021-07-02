@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import TutorComponent from "../components/tutor-component";
+import TutorComponent from "../components/tutors/tutor-component";
 export default {
   name: "tutor",
   components: {TutorComponent}
