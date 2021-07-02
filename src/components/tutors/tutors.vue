@@ -44,7 +44,7 @@ export default {
       dialog: false,
       dialogDelete: false,
       headers: [
-        {text: 'Tutor', value: 'tutor'},
+        {text: 'Tutor', value: 'user'},
         {text: 'Topic', value: 'topic'},
         {text: 'Language', value: 'language'},
         {text: 'Actions', value: 'actions', sortable: false}
@@ -82,8 +82,12 @@ export default {
     retrieveTutors() {
       UserApiService.getAll()
           .then(response => {
+            /*console.log(response);
             this.users = response.data;
-            this.displayTutors = response.data.map(this.getDisplayTutor);
+            this.displayTutors = response.data.map(this.getDisplayTutor);*/
+            for (let i = 0; i < response.data.length; i++) {
+              this.users.push(response.data[i]);
+            }
           })
           .catch((e) => {
             console.log(e);
