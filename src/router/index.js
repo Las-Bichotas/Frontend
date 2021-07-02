@@ -68,7 +68,12 @@ const routes = [{
         path: '/newsession',
         name: 'session',
         component: NewSession
-    }
+    },
+    {
+        path: '/tutors',
+        name: 'tutors',
+        component: () => import('../components/tutors/tutors')
+    },
 
 ]
 
