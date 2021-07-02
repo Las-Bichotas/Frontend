@@ -8,6 +8,7 @@ import Subscriptions from "@/views/subscription.vue";
 import profile from "@/views/profile.vue";
 import Pay from "@/views/payment.vue";
 import NewSession from "@/views/new-session.vue";
+import Tutors from "../components/tutors/tutors";
 
 Vue.use(VueRouter)
 
@@ -72,7 +73,7 @@ const routes = [{
     {
         path: '/tutors',
         name: 'tutors',
-        component: () => import('../components/tutors/tutors')
+        component: Tutors
     },
 
 ]

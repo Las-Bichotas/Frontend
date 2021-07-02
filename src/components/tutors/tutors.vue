@@ -85,11 +85,13 @@ export default {
     },
 
     getDisplayTutor(tutor) {
+      console.log(tutor);
       return {
         tutor: tutor.tutor,
         topic: tutor.topic,
         language: tutor.language,
       };
+
     },
 
     refreshList() {

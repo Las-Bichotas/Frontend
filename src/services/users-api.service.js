@@ -3,7 +3,7 @@ import http from './http.common';
 
 class UsersApiService {
     getAll() {
-        return http.get('/api/user');
+        return http.get('/api/users');
     }
 
     get(id) {
