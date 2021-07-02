@@ -9,7 +9,7 @@
     >
       <v-list-item class="px-2">
         <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/85.jpg"></v-img>
+          <v-img src="https://cdn.vuetifyjs.com/images/john.jpg"></v-img>
         </v-list-item-avatar>
 
         <v-list-item-title>John Leider</v-list-item-title>
