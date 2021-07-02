@@ -1,7 +1,8 @@
 <template>
-  <div class="">
-  <Drawer></Drawer>
-  <user></user></div>
+  <v-app>
+   <Drawer></Drawer>
+    <user></user>
+  </v-app>
 </template>
 
 <script>
