@@ -49,7 +49,7 @@ export default {
         {text: 'Language', value: 'language'},
         {text: 'Actions', value: 'actions', sortable: false}
       ],
-      tutors: [],
+      users: [],
       displayTutors: [],
       editedIndex: -1,
       editedItem: {
@@ -80,9 +80,9 @@ export default {
   },
   methods: {
     retrieveTutors() {
-      UserApiService.getAll()
+      UserApiService.getAllTutors()
           .then(response => {
-            this.tutors = response.data;
+            this.users = response.data;
             this.displayTutors = response.data.map(this.getDisplayTutor);
           })
           .catch((e) => {
@@ -90,12 +90,12 @@ export default {
           });
     },
 
-    getDisplayTutor(tutor) {
-      console.log(tutor);
+    getDisplayTutor(user) {
+      console.log(user);
       return {
-        tutor: tutor.tutor,
-        topic: tutor.topic,
-        language: tutor.language,
+        users: user.tutor,
+        topic: user.topic,
+        language: user.language,
       };
 
     },
@@ -107,7 +107,7 @@ export default {
     editItem(item) {
       this.editedIndex = this.displayTutors.indexOf(item);
       console.log(item);
-      this.editedItem = this.tutors[this.editedIndex];
+      this.editedItem = this.users[this.editedIndex];
       this.dialog = true;
     },
 
@@ -125,32 +125,6 @@ export default {
         this.editedItem = Object.assign({}, this.defaultItem)
         this.editedIndex = -1
       })
-    },
-
-    save() {
-      if (this.editedIndex > -1) {
-        this.tutors[this.editedIndex] = this.editedItem;
-        this.displayTutors[this.editedIndex] = this.getDisplayTutor(this.tutors[this.editedIndex]);
-        UserApiService.update(this.editedItem.id, this.editedItem)
-            .then(() => {
-              this.refreshList();
-            })
-            .catch(e => {
-              console.log(e);
-            });
-
-      } else {
-        UserApiService.create(this.editedItem)
-            .then(response => {
-              let item = response.data;
-              this.tutors.push(item);
-              this.displayTutors.push(this.getDisplayTutor(item));
-            })
-            .catch(e => {
-              console.log(e);
-            })
-      }
-      this.close()
     },
 
     navigateToProfileTutor() {

@@ -10,6 +10,10 @@ class UsersApiService {
         return http.get(`/api/users/${id}`);
     }
 
+    getAllTutors() {
+        return http.get('/api/role/2/users');
+    }
+
     create(user, roleId) {
         return http.post(`/api/users/${roleId}`, user);
     }
