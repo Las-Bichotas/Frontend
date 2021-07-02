@@ -11,7 +11,7 @@ class UsersApiService {
     }
 
     getAllTutors() {
-        return http.get('/api/role/2/users');
+        return http.get('/api/roles/1');
     }
 
     create(user, roleId) {

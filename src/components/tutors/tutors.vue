@@ -80,7 +80,7 @@ export default {
   },
   methods: {
     retrieveTutors() {
-      UserApiService.getAllTutors()
+      UserApiService.getAll()
           .then(response => {
             this.users = response.data;
             this.displayTutors = response.data.map(this.getDisplayTutor);
@@ -93,7 +93,7 @@ export default {
     getDisplayTutor(user) {
       console.log(user);
       return {
-        users: user.tutor,
+        users: user.name,
         topic: user.topic,
         language: user.language,
       };
