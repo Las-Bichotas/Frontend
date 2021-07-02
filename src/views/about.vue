@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import session from '../components/session.vue'
+import session from '../components/sessions/session.vue'
 export default {
   components: { session },
 }

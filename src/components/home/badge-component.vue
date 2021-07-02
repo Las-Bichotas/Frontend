@@ -77,26 +77,26 @@ export default {
   data() {
     return {
       items: [
-        {src: require("../assets/profesor1.1.png")},
-        {src: require("../assets/profesor2.2.png")},
-        {src: require("../assets/profesor3.1.png")},
-        {src: require("../assets/profesor4.1.png")},
+        {src: require("../../assets/profesor1.1.png")},
+        {src: require("../../assets/profesor2.2.png")},
+        {src: require("../../assets/profesor3.1.png")},
+        {src: require("../../assets/profesor4.1.png")},
       ],
       imgs: [
-        {src: require("../assets/profesor1.3.png")},
-        {src: require("../assets/Profesor2.4.png")},
-        {src: require("../assets/profesor3.2.png")},
-        {src: require("../assets/profesor4.4.png")},],
+        {src: require("../../assets/profesor1.3.png")},
+        {src: require("../../assets/Profesor2.4.png")},
+        {src: require("../../assets/profesor3.2.png")},
+        {src: require("../../assets/profesor4.4.png")},],
       cards: [
-        {src: require("../assets/alumno1.2.png")},
-        {src: require("../assets/alumno2.1.png")},
-        {src: require("../assets/alumno3.3.png")},
-        {src: require("../assets/alumno4.2.png")},],
+        {src: require("../../assets/alumno1.2.png")},
+        {src: require("../../assets/alumno2.1.png")},
+        {src: require("../../assets/alumno3.3.png")},
+        {src: require("../../assets/alumno4.2.png")},],
       imgss: [
-        {src: require("../assets/alumno1.4.png")},
-        {src: require("../assets/alumno2.3.png")},
-        {src: require("../assets/alumno3.4.png")},
-        {src: require("../assets/alumno4.3.png")},],
+        {src: require("../../assets/alumno1.4.png")},
+        {src: require("../../assets/alumno2.3.png")},
+        {src: require("../../assets/alumno3.4.png")},
+        {src: require("../../assets/alumno4.3.png")},],
     }
   },
 }

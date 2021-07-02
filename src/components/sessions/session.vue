@@ -45,11 +45,11 @@
 </template>
 
 <script>
-import UserSessionApiService from "../services/user-session-api.service";
+import UserSessionApiService from "../../services/user-session-api.service";
 import moment from 'moment'
 import Vue from "vue";
 import VueRouter from "vue-router";
-import SessionApiService from "../services/sessions-api.service";
+import SessionApiService from "../../services/sessions-api.service";
 Vue.use(VueRouter);
 
 import VueCompositionAPI from "@vue/composition-api";

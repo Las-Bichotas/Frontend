@@ -43,9 +43,9 @@ export default {
   data() {
     return {
       items: [
-        { src: require("../assets/zoom-conversation.jpg") },
-        { src: require("../assets/conversation-twomens.jpg") },
-        { src: require("../assets/conversation-twowomans.jpg") },
+        { src: require("../../assets/zoom-conversation.jpg") },
+        { src: require("../../assets/conversation-twomens.jpg") },
+        { src: require("../../assets/conversation-twowomans.jpg") },
       ],
     };
   },

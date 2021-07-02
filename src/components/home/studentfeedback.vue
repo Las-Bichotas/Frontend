@@ -15,7 +15,7 @@
               class="align-center justify-center"
               width="800px"
               height="250px"
-              src="../assets/student1.png"
+              src="../../assets/student1.png"
             ></v-img>
             <h2 class="text-center">Juan carlos</h2>
           </v-container>

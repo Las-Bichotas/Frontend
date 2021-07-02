@@ -91,9 +91,9 @@
 </template>
 
 <script>
-import moment from 'moment'
+//import moment from 'moment'
 import router from "../router/index"
-import PayApiService from "../services/pay-api.service"
+//import PayApiService from "../services/pay-api.service"
 import VueCCard from "vue-ccard";
 import Vue from "vue";
 import VueCompositionAPI from "@vue/composition-api";
@@ -108,7 +108,7 @@ export default {
 
 
      function makePayment(){
-      state.month = moment(String(state.cc.exp)).format('MM');
+      /*state.month = moment(String(state.cc.exp)).format('MM');
       state.year =moment(String(state.cc.exp)).format('YYYY');
 
        PayApiService.pay({
@@ -124,7 +124,8 @@ export default {
         router.push('/user');
         }
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err))*/
+       router.push('/user');
 
     }
 

@@ -73,11 +73,11 @@
 </template>
 
 <script>
-import LanguageApiService from "../services/languages-api.service.js";
+import LanguageApiService from "../../services/languages-api.service.js";
 import moment from 'moment'
 import DatetimePicker from "vuetify-datetime-picker";
-import TopicApiService from "../services/topics-api.service";
-import SessionApiService from "../services/sessions-api.service";
+import TopicApiService from "../../services/topics-api.service";
+import SessionApiService from "../../services/sessions-api.service";
 import Vue from "vue";
 import VueCompositionAPI from "@vue/composition-api";
 Vue.use(VueCompositionAPI);

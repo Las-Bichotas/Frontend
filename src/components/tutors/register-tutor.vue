@@ -176,7 +176,7 @@ export default {
 
 <style scoped>
 .ss {
-  background-image: url("../assets/wave.svg") !important;
+  background-image: url("../../assets/wave.svg") !important;
   width: 100%;
   height: 100%;
   background-color: #faf4f4;

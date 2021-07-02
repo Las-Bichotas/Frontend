@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import subscriptionAPI from "../services/subscriptions-api.service"
+import subscriptionAPI from "../../services/subscriptions-api.service"
 
 import Vue from "vue";
 import VueCompositionAPI from "@vue/composition-api";

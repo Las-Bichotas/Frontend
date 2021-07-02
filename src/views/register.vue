@@ -150,7 +150,7 @@ import VueCompositionAPI from '@vue/composition-api'
 Vue.use(VueCompositionAPI)
 import {reactive} from '@vue/composition-api'
 import RegisterStudent from "@/components/register-student";
-import RegisterTutor from "@/components/register-tutor";
+import RegisterTutor from "@/components/tutors/register-tutor";
 
 export default {
   name: "Register",

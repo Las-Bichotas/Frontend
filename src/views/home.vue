@@ -23,14 +23,14 @@
 <script>
 // @ is an alias to /src
 
-import Footer from "@/components/footer";
-import Banner from "@/components/banner";
-import CallToLogin from "@/components/call-to-register";
-import RankingStudent from "@/components/ranking-student";
-import Testimonials from "../components/testimonials";
-import MoreSpoken from "../components/more-spoken";
-import Studentfeedback from "../components/studentfeedback.vue";
-import BadgeComponent from "../components/badge-component";
+import Footer from "@/components/home/footer";
+import Banner from "@/components/home/banner";
+import CallToLogin from "@/components/home/call-to-register";
+import RankingStudent from "@/components/home/ranking-student";
+import Testimonials from "../components/home/testimonials";
+import MoreSpoken from "../components/home/more-spoken";
+import Studentfeedback from "../components/home/studentfeedback.vue";
+import BadgeComponent from "../components/home/badge-component";
 export default {
   name: "Home",
   components: {

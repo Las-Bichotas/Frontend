@@ -10,7 +10,7 @@
 <script>
 
 
-import SubscriptionItem from "@/components/subscription-item";
+import SubscriptionItem from "@/components/subscription/subscription-item";
 export default {
   name: "Subscription",
   components: {SubscriptionItem}

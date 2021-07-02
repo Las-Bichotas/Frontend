@@ -6,8 +6,8 @@
           <div>
             <v-img
               contain
-              lazy-src="../assets/studyng.jpg"
-              src="../assets/studyng.jpg"
+              lazy-src="../../assets/studyng.jpg"
+              src="../../assets/studyng.jpg"
               width="500"
             ></v-img>
           </div>
